@@ -1,7 +1,5 @@
 # Discover new music you'll enjoy.
 
-## Future Work
-
 ## Built With
 
 ## Installations
