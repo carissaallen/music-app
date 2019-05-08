@@ -1,6 +1,12 @@
 # Discover new music you'll enjoy.
 
 ## Built With
+* HTML5
+* CSS3
+* React
+* JavaScript
+* jQuery
+* Express
 
 ## Installations
 
