@@ -20,6 +20,15 @@ Installed express as a dependency.
 
 `npm install express`
 
+Updated _package.json_ file to include node/npm versions.
+
+```
+  "engines": {
+    "node": "11.14.0",
+    "npm": "6.9.0"
+  },
+```
+
 ## Deployment
 
 ## Built By
