@@ -1,11 +1,11 @@
 # Discover new music you'll enjoy.
 
-# Future Work
+## Future Work
 
-# Built With
+## Built With
 
-# Deployment
+## Deployment
 
-# Built By
+## Built By
 * Hannah Galbraith
 * Carissa Allen
