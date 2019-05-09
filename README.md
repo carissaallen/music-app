@@ -39,6 +39,10 @@ Installed the [Heroku CLI](https://devcenter.heroku.com/articles/getting-started
 
 ## Deployment
 
+Deployed to: [https://glacial-oasis-76861.herokuapp.com/](https://glacial-oasis-76861.herokuapp.com/)
+
+For future deployments, simply `git push heroku master`.
+
 ## Built By
 * Hannah Galbraith
 * Carissa Allen
