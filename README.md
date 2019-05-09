@@ -33,6 +33,10 @@ Updated _package.json_ file to include node/npm versions.
   },
 ```
 
+**Heroku CLI**
+
+Installed the [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up) for deployment.
+
 ## Deployment
 
 ## Built By
