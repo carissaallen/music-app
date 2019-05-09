@@ -33,7 +33,15 @@ Updated _package.json_ file to include node/npm versions.
   },
 ```
 
+**Heroku CLI**
+
+Installed the [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up) for deployment.
+
 ## Deployment
+
+Deployed to: [https://glacial-oasis-76861.herokuapp.com/](https://glacial-oasis-76861.herokuapp.com/)
+
+For future deployments, simply `git push heroku master`.
 
 ## Built By
 * Hannah Galbraith
