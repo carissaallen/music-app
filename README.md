@@ -3,9 +3,11 @@
 Generates a playlist recommendation based on a user's favorite song, artist, or genre.
 
 ## Built With
+### Front-end
 * HTML5
 * CSS3
 * React
+### Back-end
 * JavaScript
 * jQuery
 * Express
