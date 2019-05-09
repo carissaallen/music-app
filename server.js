@@ -1,4 +1,4 @@
-// app.js - application route module
+// server.js - application route module
 
 const express = require('express');
 const port = process.env.PORT;
