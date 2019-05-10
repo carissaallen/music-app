@@ -60,6 +60,7 @@ h3 {
     letter-spacing: .2em;
     text-transform: uppercase;
     vertical-align: middle;
+    margin-right: 10px;
 }
 
 .navbar-custom {
