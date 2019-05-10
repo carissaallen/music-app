@@ -31,6 +31,7 @@ h3 {
     letter-spacing: .005em;
 }
 
+
 /***************************************
  *  navbar
  ***************************************/
@@ -74,6 +75,7 @@ h3 {
     padding: 5px 10px;
 }
 
+
 /***************************************
  *  main page
  ***************************************/
@@ -102,6 +104,7 @@ h3 {
 .home-logo h1 {
     padding: 5px 10px;
 }
+
 
 /***************************************
  *  search container
@@ -173,6 +176,32 @@ input {
 input, label, textarea {
     font-family: 'Poppins', sans-serif;
 }
+
+
+/***************************************
+ *  footer
+ ***************************************/
+ .footer-section {
+     padding: 7% 15%;
+     background-color: #fff;
+     text-align: center;
+ }
+
+ #footer h2 {
+     font-weight: 700;
+     font-size: 22px;
+ }
+
+ #footer p {
+     font-weight: 400;
+     font-size: 14px;
+ }
+
+.footer-section .logo-sm {
+    width: 22px;
+    margin-left: 10px; 
+}
+
 
 /***************************************
  *  media queries
