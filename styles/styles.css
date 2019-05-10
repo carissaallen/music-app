@@ -113,7 +113,7 @@ h3 {
     position: absolute;
     left: 0;
     right: 0;
-    top: 22%;
+    top: 30%;
     transform: translateY(-35%);
     text-align: center;
     z-index: 9;             /* required for the input tag to work */
