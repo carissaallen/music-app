@@ -47,6 +47,7 @@
 </head>
 
 <body>
+
     <!-- navbar
   =========================================================================== -->
     <nav class="navbar navbar-expand-md navbar-light navbar-custom">
@@ -76,33 +77,32 @@
                 <div class="search-box">
                     <div class="icon-search"><img src="../images/icons/iconmonstr-magnifier-4.svg"></div>
                     <div class="react-autosuggest__container">
-                        <input type="text" autocomplete="off" role="combobox" class="react-autosggest__input"
-                            placeholder="Type an artist name">
+                        <input class="react-autosuggest__input" type="text" placeholder="Type an artist name"
+                            autocomplete="off" role="combobox">
                     </div>
                 </div>
             </div>
             <div class="fit-to-box">
+                <div class="bg-mobile"></div>
                 <iframe frameborder="0" height="100%" width="100%"
                     src="https://www.youtube.com/embed/7BJ7MDOmLPE?&start=14&autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=7BJ7MDOmLPE"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
                 </iframe>
             </div>
         </div>
+    </section>
 
 
 
 
+    <!-- load react -->
+    <!-- note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> -->
+    <script src="https://unpkg.com/react-autosuggest/dist/standalone/autosuggest.js"></script>
 
-        <!-- load react -->
-        <!-- note: when deploying, replace "development.js" with "production.min.js". -->
-        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-autosuggest/dist/standalone/autosuggest.js"></script>
-
-        <!-- <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script> -->
-
-        <!-- load our react component -->
 
 </body>
 
