@@ -126,6 +126,49 @@ h3 {
 /***************************************
  *  search box
  ***************************************/
+.icon-search {
+    height: 10px;
+}
+
+.search-box .icon-search {
+    font-size: 22px;
+    color: #88899f;
+    position: absolute;
+    right: 20px;
+    top: 12%;
+    transform: translateY(-50%);
+    transition: color ease .2s;
+}
+
+.search-box {
+    width: 400px; 
+    display: block;
+    position: relative;
+    margin: 20px auto 10px;
+    transition: background-color ease .2s;
+}
+
+.search-box input {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #f3f3f5;
+    border-radius: 4px;
+    /* transform: background-color ease .2s; */
+}
+
+input {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    padding: 15px 10px 15px 20px;
+    border: 1px solid #f3f3f5;
+}
+
+input, label, textarea {
+    font-family: 'Poppins', sans-serif;
+}
 
 
 /***************************************
