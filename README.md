@@ -14,6 +14,12 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 
 ## Installations
 
+**React**
+
+Installed React Autosuggest.
+
+`npm install react-autosuggest --save`
+
 **Express**
 
 Ran this command to create the package.json file.
