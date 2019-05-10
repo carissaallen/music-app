@@ -15,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #000;
+    color: #181818;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -26,29 +26,56 @@ h1 {
 }
 
 h3 {
-    color: #181818;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: .005em;
 }
 
 /***************************************
- *  layout
- ***************************************/
-
-/***************************************
  *  navbar
  ***************************************/
-
-/***************************************
- *  homepage
- ***************************************/
-body { 
-    font-family: 'Poppins-bold', sans-serif;
-    background-color: transparent;
-    margin: 0;
+.navbar-nav > li {
+    padding-left: 10px; 
+    padding-right: 10px;
 }
 
+.navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    height: 1.3rem;
+}
+
+.nav-link { 
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px;
+    font-weight: 700;
+    color: #181818 !important;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.navbar-custom {
+    margin: 0;
+    padding: 5px 5px;
+    z-index: 5;
+}
+
+.navbar-left h1 {
+    vertical-align: middle;
+    padding: 5px 10px;
+}
+
+/***************************************
+ *  main page
+ ***************************************/
 .fit-to-box {
     display: inline-block;
     top: 0;
@@ -69,6 +96,11 @@ body {
     max-height: 1024px;     /* black bars will appear after reaching max-height */
     opacity: .7;
 }
+
+.home-logo h1 {
+    padding: 5px 10px;
+}
+
 /***************************************
  *  media queries
  ***************************************/
