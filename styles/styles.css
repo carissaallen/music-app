@@ -1,0 +1,89 @@
+/***************************************
+ *  elements
+ ***************************************/
+* {
+    box-sizing: border-box;
+}
+
+a, a:hover { 
+    text-decoration: none;
+}
+
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+    letter-spacing: .001em;
+    font-size: 38px;
+}
+
+h3 {
+    color: #181818;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .005em;
+}
+
+/***************************************
+ *  layout
+ ***************************************/
+
+/***************************************
+ *  navbar
+ ***************************************/
+
+/***************************************
+ *  homepage
+ ***************************************/
+body { 
+    font-family: 'Poppins-bold', sans-serif;
+    background-color: transparent;
+    margin: 0;
+}
+
+.video-background {
+    background: #181818;
+    position: fixed;
+    top: 0; 
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99;
+}
+
+.video-foreground, .video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    opacity: .7;
+    pointer-events: none;
+}
+
+/***************************************
+ *  media queries
+ ***************************************/
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground { 
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground { 
+        width: 300%;
+        left: -100%;
+    }
+}
+
+
