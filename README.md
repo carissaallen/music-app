@@ -49,6 +49,9 @@ Deployed to: [https://glacial-oasis-76861.herokuapp.com/](https://glacial-oasis-
 
 For future deployments, simply `git push heroku master`.
 
+## Design Inspiration
+* [Magic Playlist](https://magicplaylist.co/)
+
 ## Built By
 * Hannah Galbraith
 * Carissa Allen
