@@ -71,8 +71,15 @@
     <section id="title">
         <div class="title-section">
             <div class="search-header">
-            <h1>Search for music.</h1>
-            <h3>Generates a new playlist based on your favorite song, artist, or genre.</h3>
+                <h1>Search for music.</h1>
+                <h3>Generates a new playlist based on your favorite song, artist, or genre.</h3>
+                <div class="search-box">
+                    <div class="icon-search"><img src="../images/icons/iconmonstr-magnifier-4.svg"></div>
+                    <div class="react-autosuggest__container">
+                        <input type="text" autocomplete="off" role="combobox" class="react-autosggest__input"
+                            placeholder="Type an artist name">
+                    </div>
+                </div>
             </div>
             <div class="fit-to-box">
                 <iframe frameborder="0" height="100%" width="100%"
@@ -81,6 +88,21 @@
                 </iframe>
             </div>
         </div>
+
+
+
+
+
+        <!-- load react -->
+        <!-- note: when deploying, replace "development.js" with "production.min.js". -->
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-autosuggest/dist/standalone/autosuggest.js"></script>
+
+        <!-- <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script> -->
+
+        <!-- load our react component -->
 
 </body>
 
