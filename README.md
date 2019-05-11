@@ -7,6 +7,7 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 * HTML5
 * CSS3
 * React
+* YouTube Player API
 ### Back-end
 * JavaScript
 * jQuery
