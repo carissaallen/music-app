@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/carissaallen/music-app#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "querystring": "^0.2.0",
+    "react": "^16.8.6",
+    "react-autosuggest": "^9.4.3",
+    "request": "^2.88.0"
   }
 }
