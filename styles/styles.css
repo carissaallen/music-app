@@ -114,7 +114,7 @@ h3 {
     position: absolute;
     left: 0;
     right: 0;
-    top: 30%;
+    top: 26%;
     transform: translateY(-35%);
     text-align: center;
     z-index: 9;             /* required for the input tag to work */
@@ -142,7 +142,7 @@ h3 {
     color: #88899f;
     position: absolute;
     right: 20px;
-    top: 5%;
+    top: 1%;
     transform: translateY(-50%);
     transition: color ease .2s;
 }
@@ -177,6 +177,23 @@ input {
 
 input, label, textarea {
     font-family: 'Poppins', sans-serif;
+}
+
+.spotify-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    margin: 20px 10px;
+    border-radius: 500px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: 10px 20px;
+}
+
+.spotify-button:hover {
+    background-color: #1DB954;
 }
 
 
@@ -229,10 +246,14 @@ input, label, textarea {
     .search-header {
         top: 40%;
     }
+    .spotify-button {
+        font-size: 14px;
+        padding: 15px 40px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     .search-header {
-        top: 20%;
+        top: 19%;
     }
 }
