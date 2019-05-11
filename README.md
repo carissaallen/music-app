@@ -11,6 +11,7 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 * JavaScript
 * jQuery
 * Express
+* Spotify API
 
 ## Installations
 
