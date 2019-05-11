@@ -1,0 +1,335 @@
+/***************************************
+ *  elements
+ ***************************************/
+* {
+    box-sizing: border-box;
+}
+
+a, a:hover { 
+    text-decoration: none;
+}
+
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6 {
+    color: #181818;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+    letter-spacing: .001em;
+    font-size: 38px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .005em;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/***************************************
+ *  navbar
+ ***************************************/
+.navbar-nav > li {
+    padding-left: 10px; 
+    padding-right: 10px;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    height: 1.3rem;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-link { 
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px;
+    font-weight: 700;
+    color: #181818 !important;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.navbar-custom {
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+
+.navbar-left h1 {
+    vertical-align: middle;
+    margin-left: 5px;
+    padding: 5px 0 0 10px;
+}
+
+
+/***************************************
+ *  main page
+ ***************************************/
+.fit-to-box {
+    display: inline-block;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;            /* take up full width available */
+    padding-top: 56.25%;    /* give aspect ratio of 16:9; "720/1280 = 0.5625" */
+    height: 0px;            /* to avoid expanding beyond padding */
+    position: relative;     /* allow for absolute positioning of child elements */
+}
+
+.fit-to-box > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 1024px;     /* black bars will appear after reaching max-height */
+    opacity: .7;
+    z-index: -999;
+}
+
+.home-logo h1 {
+    padding: 5px 10px;
+}
+
+
+/***************************************
+ *  search container
+ ***************************************/
+ .search-header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26%;
+    transform: translateY(-35%);
+    text-align: center;
+    z-index: 9;             /* required for the input tag to work */
+}
+
+.search-header h1 {
+    font-weight: 400;
+    color: #fff;
+    font-size: 48px;
+}
+
+.search-header h3 {
+    color: #e8e8e8;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.icon-search {
+    height: 7px;
+    z-index: 999;
+}
+
+.search-box .icon-search {
+    font-size: 22px;
+    color: #88899f;
+    position: absolute;
+    right: 20px;
+    top: 1%;
+    transform: translateY(-50%);
+    transition: color ease .2s;
+}
+
+.search-box {
+    width: 400px;
+    display: block;
+    position: relative;
+    margin: 20px auto 10px;
+    transition: background-color ease .2s;
+}
+
+.search-box input {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #f3f3f5;
+    border-radius: 4px;
+    outline-width: 0;
+    transform: background-color ease .2s;
+}
+
+input {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    padding: 15px 10px 15px 20px;
+    border: 1px solid #f3f3f5;
+    z-index: 999999;
+}
+
+input, label, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+.spotify-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    margin: 20px 10px;
+    border-radius: 500px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: 10px 20px;
+}
+
+.spotify-button:hover {
+    background-color: #1DB954;
+}
+
+/***************************************
+ *  about
+ ***************************************/
+.about-section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 2;
+    grid-column: 2 / span 10;
+    background-color: #fff;
+    padding: 3rem;
+}
+
+#about h4 {
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+#about .team-section p {
+    text-align: right;
+}
+
+#about .app-section p {
+    text-align: left;
+}
+
+.app-section {
+    grid-column: 2 / span 4;
+    text-align: left;
+}
+
+.team-section {
+    grid-column: 8 / span 4;
+    text-align: right;
+}
+
+.team-pic {
+    border-radius: 100%;
+    width: 4rem;
+    margin: 0 20px;
+}
+
+
+/***************************************
+ *  footer
+ ***************************************/
+ .footer {
+     border-top: 1px dashed #666;
+     padding: 20px 0;
+ }
+
+.grid-wrapper {
+    display: grid;
+    margin: 0 auto;
+}
+
+.footer .grid-wrapper {
+    grid-template-columns: repeat(12, 1fr);
+}
+ 
+ .footer .social {
+    grid-column: 6 / span 2;
+    grid-row: 1;
+    justify-self: center;
+ }
+ 
+.footer h2 {
+     font-weight: 700;
+     font-size: 22px;
+ }
+
+ .footer p {
+     font-weight: 400;
+     font-size: 14px;
+ }
+
+.logo-sm {
+    width: 20px;
+    margin: 0px 5px;
+}
+
+
+/***************************************
+ *  media queries
+ ***************************************/
+@media only screen and (min-width: 1024px) {
+    .footer {
+        border-top: none;
+    }
+    .search-header h1 {
+        color: #181818;
+        font-size: 80px;
+    }
+    .search-header h3 {
+        color: #181818;
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .search-box {
+        width: 600px;
+    }
+    .search-header {
+        top: 40%;
+    }
+    .spotify-button {
+        font-size: 14px;
+        padding: 15px 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .search-header {
+        top: 19%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #about .about-section {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #about .team-section {
+        display: none;
+    }
+    #about .app-section {
+        grid-column: 2 / span 10;
+    }
+}
