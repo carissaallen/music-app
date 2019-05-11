@@ -6,20 +6,14 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 ### Front-end
 * HTML5
 * CSS3
-* YouTube IFrame API
+* [YouTube IFrame API](https://developers.google.com/youtube/iframe_api_reference)
 ### Back-end
 * JavaScript
 * jQuery
 * Express
-* Spotify API
+* [Spotify API](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/)
 
 ## Installations
-
-**React**
-
-Installed React Autosuggest.
-
-`npm install react-autosuggest --save`
 
 **Express**
 
@@ -43,6 +37,12 @@ Updated _package.json_ file to include node/npm versions.
 **Heroku CLI**
 
 Installed the [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up) for deployment.
+
+**React**
+
+Installed React Autosuggest.
+
+`npm install react-autosuggest --save`
 
 ## Deployment
 
