@@ -202,6 +202,7 @@ input, label, textarea {
     background-color: #1DB954;
 }
 
+
 /***************************************
  *  about
  ***************************************/
@@ -313,9 +314,40 @@ input, label, textarea {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
     .search-header {
-        top: 19%;
+        top: 33%;
+    }
+    iframe {
+        display: none;
+    }
+    img.bg-mobile {
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 640px;
+          
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+          
+        /* Set up positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+    .search-header h1 {
+        color: #181818;
+    }
+
+    .search-header h3 {
+        color: #181818;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    .bg-mobile {
+        display: none;
     }
 }
 
