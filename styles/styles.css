@@ -128,7 +128,9 @@ p {
 
 img.bg-mobile {
     /* Set rules to fill background */
-    min-width: 640px;
+    min-height: 65%;
+    min-width: 100%;
+
       
     /* Set up proportionate scaling */
     width: 100%;
@@ -332,7 +334,7 @@ input, label, textarea {
 
 @media only screen and (max-width: 640px) {
     .search-header {
-        top: 30%;
+        top: 29%;
     }
     iframe {
         display: none;
@@ -344,7 +346,6 @@ input, label, textarea {
     .search-header h3 {
         color: #181818;
     }
-
     .about-section {
         position: absolute;
         bottom: 0;
