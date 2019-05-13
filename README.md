@@ -6,7 +6,6 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 ### Front-end
 * HTML5
 * CSS3
-* [YouTube IFrame API](https://developers.google.com/youtube/iframe_api_reference)
 ### Back-end
 * JavaScript
 * jQuery
