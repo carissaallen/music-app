@@ -126,6 +126,24 @@ p {
     z-index: 9;             /* required for the input tag to work */
 }
 
+img.bg-mobile {
+    /* Set rules to fill background */
+    min-height: 65%;
+    min-width: 100%;
+
+      
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+      
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+  }
+
 .search-header h1 {
     font-weight: 400;
     color: #fff;
@@ -201,6 +219,7 @@ input, label, textarea {
 .spotify-button:hover {
     background-color: #1DB954;
 }
+
 
 /***************************************
  *  about
@@ -313,9 +332,36 @@ input, label, textarea {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 640px) {
     .search-header {
-        top: 19%;
+        top: 29%;
+    }
+    iframe {
+        display: none;
+    }
+    .search-header h1 {
+        color: #181818;
+    }
+
+    .search-header h3 {
+        color: #181818;
+    }
+    .about-section {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .footer {
+        position: relative;
+        margin-top: 10px;
+        bottom: 0;
+        margin-top: 500px; /* todo: better fix to ensure footer is positioned at the bottom */
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    .bg-mobile {
+        display: none;
     }
 }
 
