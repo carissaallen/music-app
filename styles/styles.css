@@ -332,11 +332,11 @@ input, label, textarea {
     }
 }
 
-@media only screen and (min-width: 668px) {
+/* @media only screen and (min-width: 668px) {
     .bg-mobile {
         display: none;
     }
-}
+} */
 
 @media only screen and (min-width: 1024px) {
     #about .about-section {
@@ -412,7 +412,6 @@ input, label, textarea {
         position: absolute;
         bottom: 0;
     }
-
     .footer {
         position: relative;
         margin-top: 10px;
@@ -435,7 +434,6 @@ input, label, textarea {
     .search-header h1 {
         color: #181818;
     }
-
     .search-header h3 {
         color: #181818;
     }
@@ -443,7 +441,6 @@ input, label, textarea {
         position: absolute;
         bottom: 0;
     }
-
     .footer {
         position: relative;
         margin-top: 10px;
@@ -474,7 +471,6 @@ input, label, textarea {
         position: absolute;
         bottom: 0;
     }
-
     .footer {
         position: relative;
         margin-top: 10px;
