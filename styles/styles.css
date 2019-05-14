@@ -120,7 +120,7 @@ p {
     position: absolute;
     left: 0;
     right: 0;
-    top: 26%;
+    top: 22%;
     transform: translateY(-35%);
     text-align: center;
     z-index: 9;             /* required for the input tag to work */
@@ -332,12 +332,6 @@ input, label, textarea {
     }
 }
 
-/* @media only screen and (min-width: 668px) {
-    .bg-mobile {
-        display: none;
-    }
-} */
-
 @media only screen and (min-width: 1024px) {
     #about .about-section {
         display: none;
@@ -353,128 +347,20 @@ input, label, textarea {
     }
 }
 
-/* media queries for mobile (common breakpoints: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) */
-
-@media only screen and (min-width: 667px) {
-    .search-header {
-        top: 0%;
+@media only screen and (min-width: 576px) {
+    .bg-mobile {
+        display: none;
     }
 }
 
-/* ----- iPhone 5, 5S, 5C, and 5SE ----- */
-@media only screen 
-    and (min-device-width: 320px) 
-    and (max-device-width: 568px) 
-    and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-width: 576px) {
     .search-header {
-        top: 10%;
-    }
-    iframe {
-        display: none;
+        top: 22%;
     }
     .search-header h1 {
         color: #181818;
     }
     .search-header h3 {
         color: #181818;
-    }
-    .about-section {
-        position: absolute;
-        bottom: 0;
-    }
-    .footer {
-        position: relative;
-        margin-top: 10px;
-        bottom: 0;
-        margin-top: 500px; /* todo: better fix to ensure footer is positioned at the bottom */
-    }
-}
-
-/* ----- iPhone 6, 6S, 7 and 8 ----- */
-@media only screen 
-    and (min-device-width: 375px) 
-    and (max-device-width: 667px) 
-    and (-webkit-min-device-pixel-ratio: 2) {
-    .search-header {
-        top: 20%;
-    }
-    iframe {
-        display: none;
-    }
-    .search-header h1 {
-        color: #181818;
-    }
-
-    .search-header h3 {
-        color: #181818;
-    }
-    .about-section {
-        position: absolute;
-        bottom: 0;
-    }
-    .footer {
-        position: relative;
-        margin-top: 10px;
-        bottom: 0;
-        margin-top: 500px; 
-    }
-}
-
-/* ----- iPhone 6+, 7+ and 8+ ----- */
-@media only screen 
-    and (min-device-width: 414px) 
-    and (max-device-width: 736px) 
-    and (-webkit-min-device-pixel-ratio: 3) {
-    .search-header {
-        top: 20%;
-    }
-    iframe {
-        display: none;
-    }
-    .search-header h1 {
-        color: #181818;
-    }
-    .search-header h3 {
-        color: #181818;
-    }
-    .about-section {
-        position: absolute;
-        bottom: 0;
-    }
-    .footer {
-        position: relative;
-        margin-top: 10px;
-        bottom: 0;
-        margin-top: 500px; 
-    }
-}
-
-/* ----- iPhone X ----- */
-@media only screen 
-    and (min-device-width: 375px) 
-    and (max-device-width: 812px) 
-    and (-webkit-min-device-pixel-ratio: 3) {
-    .search-header {
-        top: 20%;
-    }
-    iframe {
-        display: none;
-    }
-    .search-header h1 {
-        color: #181818;
-    }
-
-    .search-header h3 {
-        color: #181818;
-    }
-    .about-section {
-        position: absolute;
-        bottom: 0;
-    }
-    .footer {
-        position: relative;
-        margin-top: 10px;
-        bottom: 0;
-        margin-top: 500px; 
     }
 }
