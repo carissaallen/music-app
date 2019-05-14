@@ -332,13 +332,71 @@ input, label, textarea {
     }
 }
 
+@media only screen and (min-width: 668px) {
+    .bg-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #about .about-section {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #about .team-section {
+        display: none;
+    }
+    #about .app-section {
+        grid-column: 2 / span 10;
+    }
+}
+
+/* media queries for mobile (common breakpoints: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) */
+
+@media only screen and (min-width: 667px) {
+    .search-header {
+        top: 0%;
+    }
+}
+
+/* ----- iPhone 5, 5S, 5C, and 5SE ----- */
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 568px) 
+    and (-webkit-min-device-pixel-ratio: 2) {
+    .search-header {
+        top: 10%;
+    }
+    iframe {
+        display: none;
+    }
+    .search-header h1 {
+        color: #181818;
+    }
+    .search-header h3 {
+        color: #181818;
+    }
+    .about-section {
+        position: absolute;
+        bottom: 0;
+    }
+    .footer {
+        position: relative;
+        margin-top: 10px;
+        bottom: 0;
+        margin-top: 500px; /* todo: better fix to ensure footer is positioned at the bottom */
+    }
+}
+
+/* ----- iPhone 6, 6S, 7 and 8 ----- */
 @media only screen 
     and (min-device-width: 375px) 
     and (max-device-width: 667px) 
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: portrait) {
+    and (-webkit-min-device-pixel-ratio: 2) {
     .search-header {
-        top: 29%;
+        top: 20%;
     }
     iframe {
         display: none;
@@ -359,27 +417,68 @@ input, label, textarea {
         position: relative;
         margin-top: 10px;
         bottom: 0;
-        margin-top: 500px; /* todo: better fix to ensure footer is positioned at the bottom */
+        margin-top: 500px; 
     }
 }
 
-@media only screen and (min-width: 576px) {
-    .bg-mobile {
+/* ----- iPhone 6+, 7+ and 8+ ----- */
+@media only screen 
+    and (min-device-width: 414px) 
+    and (max-device-width: 736px) 
+    and (-webkit-min-device-pixel-ratio: 3) {
+    .search-header {
+        top: 20%;
+    }
+    iframe {
         display: none;
+    }
+    .search-header h1 {
+        color: #181818;
+    }
+
+    .search-header h3 {
+        color: #181818;
+    }
+    .about-section {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .footer {
+        position: relative;
+        margin-top: 10px;
+        bottom: 0;
+        margin-top: 500px; 
     }
 }
 
-@media only screen and (min-width: 1024px) {
-    #about .about-section {
+/* ----- iPhone X ----- */
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 812px) 
+    and (-webkit-min-device-pixel-ratio: 3) {
+    .search-header {
+        top: 20%;
+    }
+    iframe {
         display: none;
     }
-}
+    .search-header h1 {
+        color: #181818;
+    }
 
-@media only screen and (max-width: 700px) {
-    #about .team-section {
-        display: none;
+    .search-header h3 {
+        color: #181818;
     }
-    #about .app-section {
-        grid-column: 2 / span 10;
+    .about-section {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .footer {
+        position: relative;
+        margin-top: 10px;
+        bottom: 0;
+        margin-top: 500px; 
     }
 }
