@@ -17,8 +17,11 @@ app.use(express.static(__dirname)); // Serves static files
 router.get('/', function(req, res) {
     res.sendFile(path + 'index.html');
 });
-app.use('/', router);
 
+router.get('/about', function(req, res) {
+  res.sendFile(path + 'about.html');
+});
+app.use('/', router);
 
 /* Authorization code to authenticate against the Spotify Accounts. */
 
