@@ -483,7 +483,7 @@ input, label, textarea {
 
 @media only screen and (min-width: 600px) {
     .search-header {
-        top: 22%;
+        top: 15%;
     }
 }
 
@@ -496,15 +496,9 @@ input, label, textarea {
     }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 750px) {
     .search-header {
-        top: 30%;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .search-header {
-        top: 35%;
+        top: 15%;
     }
 }
 
@@ -513,7 +507,7 @@ input, label, textarea {
         width: 600px;
     }
     .search-header {
-        top: 40%;
+        top: 22%;
     }
     .spotify-button {
         font-size: 14px;
