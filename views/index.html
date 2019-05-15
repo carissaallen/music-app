@@ -45,6 +45,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -62,7 +63,7 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ml-auto">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
             </ul>
         </div>
@@ -78,15 +79,16 @@
                 <h3>Generates a new playlist based on your favorite song, artist, or genre.</h3>
                 <div class="search-box">
                     <div class="icon-search"><img src="../images/icons/iconmonstr-magnifier-4.svg"></div>
-                    <div class="react-autosuggest__container">
-                        <input class="react-autosuggest__input" type="text" placeholder="Type an artist name, song title, or genre"
-                            autocomplete="off" role="combobox">
+                    <div id="app" class="react-autosuggest__container">
+                        <input class="react-autosuggest__input" type="text"
+                            placeholder="Type an artist name, song title, or genre" autocomplete="off" role="combobox">
                     </div>
                     <div id="login">
                         <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
                     </div>
                 </div>
             </div>
+        </div>
             <div class="fit-to-box">
                 <iframe frameborder="0" height="100%" width="100%"
                     src="https://www.youtube.com/embed/7BJ7MDOmLPE?&start=14&autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=7BJ7MDOmLPE"
@@ -120,7 +122,7 @@
                     Hannah Galbraith
                 </p>
                 <p>
-                    <img class="team-pic" src="../images/design/team-member-pic.jpg">
+                    <img class="team-pic" src="../images/design/team-member-pic-2.jpg">
                     Carissa Allen
                 </p>
             </div>
@@ -142,16 +144,17 @@
     </div>
 
 
-    <!-- load react -->
     <!-- note: when deploying, replace "development.js" with "production.min.js". -->
+    <!-- load react scripts -->
     <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-autosuggest/dist/standalone/autosuggest.js"></script>
+    <!-- load react component -->
+    <script src="../scripts/search.js"></script>
     <!-- ajax/handlebars -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-
 </body>
 
 </html>
