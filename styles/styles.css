@@ -470,9 +470,6 @@ input, label, textarea {
 }
 
 @media only screen and (max-width: 599px) {
-    .search-header {
-        top: 18%;
-    }
     .search-header h1 {
         color: #181818;
     }
@@ -481,11 +478,6 @@ input, label, textarea {
     }
 }
 
-@media only screen and (min-width: 600px) {
-    .search-header {
-        top: 15%;
-    }
-}
 
 @media only screen and (max-width: 700px) {
     #about .team-section {
@@ -496,18 +488,35 @@ input, label, textarea {
     }
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (max-width: 812px) {
+    .search-header {
+        top: 22%;
+    }
+}
+
+@media only screen and (min-device-width: 375px)
+and (max-device-width: 812px) 
+and (-webkit-device-pixel-ratio: 3) {
     .search-header {
         top: 15%;
+    }
+}
+
+@media only screen and (min-device-width: 858px) {
+    .search-header {
+        top: 30%;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) {
+    .search-header {
+        top: 30%;
     }
 }
 
 @media only screen and (min-width: 1024px) {
     .search-box {
         width: 600px;
-    }
-    .search-header {
-        top: 22%;
     }
     .spotify-button {
         font-size: 14px;
