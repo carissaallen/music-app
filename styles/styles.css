@@ -196,7 +196,7 @@ input {
     font-style: italic;
     padding: 15px 10px 15px 20px;
     border: 1px solid #f3f3f5;
-    z-index: 999999;
+    z-index: 2;
 }
 
 input, label, textarea {
@@ -219,6 +219,27 @@ input, label, textarea {
 .spotify-button:hover {
     background-color: #1DB954;
 }
+
+/* keeps search box vertically centered */
+
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .inner {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 
 /***************************************
@@ -305,17 +326,48 @@ input, label, textarea {
 /***************************************
  *  media queries
  ***************************************/
-@media only screen and (min-width: 1024px) {
-    .footer {
-        border-top: none;
+@media only screen and (min-width: 576px) {
+    .bg-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+    .search-header {
+        top: 18%;
     }
     .search-header h1 {
         color: #181818;
-        font-size: 80px;
     }
     .search-header h3 {
         color: #181818;
-        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .search-header {
+        top: 22%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #about .team-section {
+        display: none;
+    }
+    #about .app-section {
+        grid-column: 2 / span 10;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .search-header {
+        top: 30%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .search-header {
+        top: 35%;
     }
 }
 
@@ -330,37 +382,21 @@ input, label, textarea {
         font-size: 14px;
         padding: 15px 40px;
     }
+    .search-header h1 {
+        font-size: 80px;
+        color: #181818;
+    }
+    .search-header h3 {
+        font-size: 22px;
+        color: #181818;
+    }
+    .footer {
+        border-top: none;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     #about .about-section {
         display: none;
-    }
-}
-
-@media only screen and (max-width: 700px) {
-    #about .team-section {
-        display: none;
-    }
-    #about .app-section {
-        grid-column: 2 / span 10;
-    }
-}
-
-@media only screen and (min-width: 576px) {
-    .bg-mobile {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 576px) {
-    .search-header {
-        top: 22%;
-    }
-    .search-header h1 {
-        color: #181818;
-    }
-    .search-header h3 {
-        color: #181818;
     }
 }
