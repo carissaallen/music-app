@@ -126,8 +126,10 @@ p {
     position: absolute;
     left: 0;
     right: 0;
-    top: 30%;
-    transform: translateY(-35%);
+    padding-top: 15%;
+    vertical-align: middle;
+    align-self: center;
+    justify-content: center;
     text-align: center;
     z-index: 9;             /* required for the input tag to work */
 }
@@ -225,27 +227,6 @@ input, label, textarea {
 .spotify-button:hover {
     background-color: #1DB954;
 }
-
-/* keeps search box vertically centered */
-
-.outer {
-    display: table;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .middle {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  
-  .inner {
-    margin-left: auto;
-    margin-right: auto;
-  }
 
 
 /***************************************
@@ -469,7 +450,24 @@ input, label, textarea {
     }
 }
 
-@media only screen and (max-width: 599px) {
+@media only screen and (min-width: 259px) and (max-width: 469px) {
+    .search-header {
+        padding-top: 2%;
+    }
+    .search-header h1 {
+        font-size: 32px;
+        color: #181818;
+    }
+    .search-header h3 {
+        font-size: 16px;
+        color: #181818;
+    }
+}
+
+@media only screen and (min-width: 470px) and (max-width: 599px) {
+    .search-header {
+        padding-top: 10%;
+    }
     .search-header h1 {
         color: #181818;
     }
@@ -478,39 +476,12 @@ input, label, textarea {
     }
 }
 
-
 @media only screen and (max-width: 700px) {
     #about .team-section {
         display: none;
     }
     #about .app-section {
         grid-column: 2 / span 10;
-    }
-}
-
-@media only screen and (max-width: 812px) {
-    .search-header {
-        top: 22%;
-    }
-}
-
-@media only screen and (min-device-width: 375px)
-and (max-device-width: 812px) 
-and (-webkit-device-pixel-ratio: 3) {
-    .search-header {
-        top: 15%;
-    }
-}
-
-@media only screen and (min-device-width: 858px) {
-    .search-header {
-        top: 30%;
-    }
-}
-
-@media only screen and (min-device-width: 1024px) {
-    .search-header {
-        top: 30%;
     }
 }
 
