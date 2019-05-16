@@ -49,7 +49,7 @@ var stateKey = 'spotify_auth_state';
 
 app.use(express.static(__dirname + '/views/'))
    .use(cookieParser());
-
+   
 
 // your application requests authorization
 app.get('/login', function(req, res) {
@@ -57,6 +57,7 @@ app.get('/login', function(req, res) {
   res.cookie(stateKey, state);
 
   var scope = 'user-read-private user-read-email user-read-playback-state';
+  console.log(`send to spotify for login...`);
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
@@ -68,12 +69,14 @@ app.get('/login', function(req, res) {
 });
 
 
-// Application will request refresh and access tokens
+// application will request refresh and access tokens
 // after checking the state parameter
-app.get('/callback', function(req, res) {
+app.get('/auth', function(req, res) {
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
+ 
+  console.log(`in auth endpoint via redirect uri...`);
 
   if (state === null || state !== storedState) {
     res.redirect('/#' +
