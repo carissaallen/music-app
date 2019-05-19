@@ -23,22 +23,24 @@ var spotifyApi = new SpotifyWebApi({
   clientSecret: client_secret
 });
 
+// Retrieve an access token.
+spotifyApi.clientCredentialsGrant().then(
+  function(data) {
+    console.log('The access token expires in ' + data.body['expires_in']);
+    console.log('The access token is ' + data.body['access_token']);
+
+    // Save the access token so that it's used in future calls
+    spotifyApi.setAccessToken(data.body['access_token']);
+    console.log('The access token is ' + spotifyApi.getAccessToken())
+  },
+  function(err) {
+    console.log('Something went wrong when retrieving an access token', err);
+  }
+);
+
+
 /* Render main page and get access for the client. */
 router.get('/', function(req, res) {
-  // Retrieve an access token.
-  spotifyApi.clientCredentialsGrant().then(
-    function(data) {
-      console.log('The access token expires in ' + data.body['expires_in']);
-      console.log('The access token is ' + data.body['access_token']);
-
-      // Save the access token so that it's used in future calls
-      spotifyApi.setAccessToken(data.body['access_token']);
-      console.log('The access token is ' + spotifyApi.getAccessToken())
-    },
-    function(err) {
-      console.log('Something went wrong when retrieving an access token', err);
-    }
-  );
     res.sendFile(path + 'index.html');
 });
 
@@ -46,6 +48,7 @@ router.get('/about', function(req, res) {
   res.sendFile(path + 'about.html');
 });
 app.use('/', router);
+
 
 /**
  * Generates a random string containing numbers and letters
@@ -85,6 +88,8 @@ app.use(express.static(__dirname + '/views/'))
 //       state: state
 //     }));
 // });
+
+
 
 
 // application will request refresh and access tokens
