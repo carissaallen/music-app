@@ -12,10 +12,33 @@ const router = express.Router();
 
 app.use(express.static(__dirname)); // Serves static files
 
+/* Authorization code to authenticate against the Spotify Accounts. */
+var client_id = process.env.client_id;          // Application client
+var client_secret = process.env.client_secret;  // Application secret
+var redirect_uri = process.env.redirect_uri;    // Application redirect uri
 
-/* Render main page. */
+// Create the api object with the credentials
+var spotifyApi = new SpotifyWebApi({
+  clientId: client_id,
+  clientSecret: client_secret
+});
 
+/* Render main page and get access for the client. */
 router.get('/', function(req, res) {
+  // Retrieve an access token.
+  spotifyApi.clientCredentialsGrant().then(
+    function(data) {
+      console.log('The access token expires in ' + data.body['expires_in']);
+      console.log('The access token is ' + data.body['access_token']);
+
+      // Save the access token so that it's used in future calls
+      spotifyApi.setAccessToken(data.body['access_token']);
+      console.log('The access token is ' + spotifyApi.getAccessToken())
+    },
+    function(err) {
+      console.log('Something went wrong when retrieving an access token', err);
+    }
+  );
     res.sendFile(path + 'index.html');
 });
 
@@ -23,12 +46,6 @@ router.get('/about', function(req, res) {
   res.sendFile(path + 'about.html');
 });
 app.use('/', router);
-
-/* Authorization code to authenticate against the Spotify Accounts. */
-
-var client_id = process.env.client_id;          // Application client
-var client_secret = process.env.client_secret;  // Application secret
-var redirect_uri = process.env.redirect_uri;    // Application redirect uri
 
 /**
  * Generates a random string containing numbers and letters
