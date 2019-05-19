@@ -72,6 +72,10 @@ router.get('/', function(req, res) {
       for (var i=0; i < playlist.length; i++) {
         console.log(playlist[i]);
       }
+
+      return {
+        "playlist": playlist
+      }
     })
     .catch(function(err) {
       console.error(err);
