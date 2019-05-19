@@ -55,10 +55,22 @@ router.get('/', function(req, res) {
       return spotifyApi.getRecommendations({ seed_artists: [artist_id] });
     })
     .then(function(data){
-      console.log(data.body.tracks[0].artists[0].name);
-      console.log(data.body.tracks[0].album.name);
-      console.log(data.body.tracks[0].name);
-      console.log(data.body.tracks[0].album);
+      var playlist = [];
+      var tracks = data.body.tracks;
+
+      for (var i=0; i < tracks.length; i++) {
+        var track = {
+          song: tracks[i].name,
+          artist: tracks[i].artists[0].name,
+          album: tracks[i].album.name,
+          albumImageURL: tracks[i].album.images[0].url
+        }
+        playlist.push(track);
+      }
+
+      for (var i=0; i < playlist.length; i++) {
+        console.log(playlist[i]);
+      }
     })
     .catch(function(err) {
       console.error(err);
