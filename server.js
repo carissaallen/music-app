@@ -60,6 +60,7 @@ router.get('/', function(req, res) {
 
       for (var i=0; i < tracks.length; i++) {
         var track = {
+          id: tracks[i].id,
           song: tracks[i].name,
           artist: tracks[i].artists[0].name,
           album: tracks[i].album.name,
