@@ -55,7 +55,10 @@ router.get('/', function(req, res) {
       return spotifyApi.getRecommendations({ seed_artists: [artist_id] });
     })
     .then(function(data){
-      console.log(data.body);
+      console.log(data.body.tracks[0].artists[0].name);
+      console.log(data.body.tracks[0].album.name);
+      console.log(data.body.tracks[0].name);
+      console.log(data.body.tracks[0].album);
     })
     .catch(function(err) {
       console.error(err);
