@@ -41,14 +41,23 @@ spotifyApi.clientCredentialsGrant().then(
 
 /* Render main page and get access for the client. */
 router.get('/', function(req, res) {
+  // Search artists whose name contains 'Beyonce'
   var artist_id;
-  spotifyApi.searchArtists('Beyonce')
+  spotifyApi
+    .searchArtists('Beyonce')
     .then(function(data) {
       console.log('Search artists by "Beyonce"', data.body);
       console.log(data.body.artists.items[0].id);
       artist_id = data.body.artists.items[0].id;
-      console.log("artist_id: " + artist_id);
-    }, function(err) {
+      return artist_id
+    })
+    .then(function(artist_id) {
+      return spotifyApi.getRecommendations({ seed_artists: [artist_id] });
+    })
+    .then(function(data){
+      console.log(data.body);
+    })
+    .catch(function(err) {
       console.error(err);
     });
     res.sendFile(path + 'index.html');
