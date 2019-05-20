@@ -2,6 +2,8 @@ const express = require('express'); // Express web server framework
 const request = require('request'); // "Request" library
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
+var mustache = require('mustache');
+var fs = require('fs');
 var SpotifyWebApi = require('spotify-web-api-node');
 
 const port = process.env.PORT;
@@ -23,7 +25,7 @@ var spotifyApi = new SpotifyWebApi({
   clientSecret: client_secret
 });
 
-// Retrieve an access token.
+// Retrieve an access token from Spotify API.
 spotifyApi.clientCredentialsGrant().then(
   function(data) {
     console.log('The access token expires in ' + data.body['expires_in']);
@@ -39,9 +41,12 @@ spotifyApi.clientCredentialsGrant().then(
 );
 
 
-/* Render main page and get access for the client. */
+/* Render main page. */
 router.get('/', function(req, res) {
-  // Search artists whose name contains 'Beyonce'
+    res.sendFile(path + 'index.html');
+});
+
+router.get('/playlist', function(req, res) {
   var artist_id;
   spotifyApi
     .searchArtists('Beyonce')
@@ -77,12 +82,21 @@ router.get('/', function(req, res) {
         "playlist": playlist
       }
     })
+    .then(function(playlistObj) {
+      fs.readFile(path + 'playlist.html', function(err, data) {
+        res.writeHead(200, {
+          'Content-Type': 'text/html'
+        });
+    
+        res.write(mustache.render(data.toString(), playlistObj));
+    
+        res.end();
+      });
+    }) 
     .catch(function(err) {
       console.error(err);
     });
-    res.sendFile(path + 'index.html');
 });
-
 router.get('/about', function(req, res) {
   res.sendFile(path + 'about.html');
 });
