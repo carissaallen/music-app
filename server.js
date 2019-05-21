@@ -14,6 +14,7 @@ const path = __dirname + '/views/';
 app.use(express.static(__dirname)); // Serves static files
 app.use(express.static(__dirname + '/views/')) 
    .use(cookieParser());
+
 // Render main page
 router.get('/', function(req, res) {
   res.sendFile(path + 'index.html');
