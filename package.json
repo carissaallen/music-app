@@ -23,6 +23,8 @@
   "dependencies": {
     "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "mustache": "^3.0.1",
     "querystring": "^0.2.0",
     "react": "^16.8.6",
     "react-autosuggest": "^9.4.3",
