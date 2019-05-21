@@ -80,8 +80,10 @@
                 <div class="search-box">
                     <div class="icon-search"><img src="../images/icons/iconmonstr-magnifier-4.svg"></div>
                     <div id="app" class="react-autosuggest__container">
-                        <input class="react-autosuggest__input" type="text"
+                        <form action="/playlist" method="get">
+                            <input class="react-autosuggest__input" name="input" type="text"
                             placeholder="Type an artist name, song title, or genre" autocomplete="off" role="combobox">
+                        </form>
                     </div>
                     <div id="login">
                         <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
