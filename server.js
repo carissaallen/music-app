@@ -47,13 +47,13 @@ router.get('/', function(req, res) {
 });
 
 router.get('/playlist', function(req, res) {
-  var artist_id;
+  query = req.query;
+  var artist = query['input'];
+  
   spotifyApi
-    .searchArtists('Beyonce')
+    .searchArtists(artist)
     .then(function(data) {
-      console.log('Search artists by "Beyonce"', data.body);
-      console.log(data.body.artists.items[0].id);
-      artist_id = data.body.artists.items[0].id;
+      var artist_id = data.body.artists.items[0].id;
       return artist_id
     })
     .then(function(artist_id) {
@@ -73,11 +73,6 @@ router.get('/playlist', function(req, res) {
         }
         playlist.push(track);
       }
-
-      for (var i=0; i < playlist.length; i++) {
-        console.log(playlist[i]);
-      }
-
       return {
         "playlist": playlist
       }
@@ -102,6 +97,8 @@ router.get('/about', function(req, res) {
 });
 app.use('/', router);
 
+
+var stateKey = 'spotify_auth_state';
 
 app.use(express.static(__dirname + '/views/'))
    .use(cookieParser());
