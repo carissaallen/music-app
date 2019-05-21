@@ -2,19 +2,31 @@ const express = require('express'); // Express web server framework
 const request = require('request'); // "Request" library
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
-var mustache = require('mustache');
-var fs = require('fs');
-var SpotifyWebApi = require('spotify-web-api-node');
+const mustache = require('mustache');
+const fs = require('fs');
+const SpotifyWebApi = require('spotify-web-api-node');
 
+const app = express();              // Creates an Express application
+const router = express.Router();
 const port = process.env.PORT;
 const path = __dirname + '/views/';
 
-const app = express();              // Create an Express application
-const router = express.Router();
-
 app.use(express.static(__dirname)); // Serves static files
+app.use(express.static(__dirname + '/views/')) 
+   .use(cookieParser());
+// Render main page
+router.get('/', function(req, res) {
+  res.sendFile(path + 'index.html');
+});
 
-/* Authorization code to authenticate against the Spotify Accounts. */
+// Render about page
+router.get('/about', function(req, res) {
+res.sendFile(path + 'about.html');
+});
+
+app.use('/', router);
+
+// Authenticate against the Spotify accounts
 var client_id = process.env.client_id;          // Application client
 var client_secret = process.env.client_secret;  // Application secret
 var redirect_uri = process.env.redirect_uri;    // Application redirect uri
@@ -25,7 +37,7 @@ var spotifyApi = new SpotifyWebApi({
   clientSecret: client_secret
 });
 
-// Retrieve an access token from Spotify API.
+// Retrieve an access token from Spotify API
 spotifyApi.clientCredentialsGrant().then(
   function(data) {
     console.log('The access token expires in ' + data.body['expires_in']);
@@ -40,12 +52,7 @@ spotifyApi.clientCredentialsGrant().then(
   }
 );
 
-
-/* Render main page. */
-router.get('/', function(req, res) {
-    res.sendFile(path + 'index.html');
-});
-
+// Retrieve recommended playlist
 router.get('/playlist', function(req, res) {
   query = req.query;
   var artist = query['input'];
@@ -82,9 +89,7 @@ router.get('/playlist', function(req, res) {
         res.writeHead(200, {
           'Content-Type': 'text/html'
         });
-    
         res.write(mustache.render(data.toString(), playlistObj));
-    
         res.end();
       });
     }) 
@@ -92,19 +97,10 @@ router.get('/playlist', function(req, res) {
       console.error(err);
     });
 });
-router.get('/about', function(req, res) {
-  res.sendFile(path + 'about.html');
-});
-app.use('/', router);
-
 
 var stateKey = 'spotify_auth_state';
 
-app.use(express.static(__dirname + '/views/'))
-   .use(cookieParser());
-   
-
-// your application requests authorization
+// Requests authorization for user login
 app.get('/login', function(req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
@@ -121,8 +117,7 @@ app.get('/login', function(req, res) {
     }));
 });
 
-
-// application will request refresh and access tokens
+// Application will request refresh and access tokens 
 // after checking the state parameter
 app.get('/auth', function(req, res) {
   var code = req.query.code || null;
@@ -185,7 +180,7 @@ app.get('/auth', function(req, res) {
 });
 
 
-// Requesting access token from refresh token
+// Requests access token from refresh token
 app.get('/refresh_token', function(req, res) {
   var refresh_token = req.query.refresh_token;
   var authOptions = {
