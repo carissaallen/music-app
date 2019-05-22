@@ -41,10 +41,10 @@ p {
 /***************************************
  *  navbar
  ***************************************/
- .nav-item a:hover {
+ #navbarToggler .nav-item a:hover {
     text-decoration: none;
     border-bottom: 2px solid #b00f24;
-    padding: 2px 0;
+    padding: 5px 0;
 }
 
 .navbar-nav > li {
@@ -230,179 +230,6 @@ input, label, textarea {
 
 
 /***************************************
- *  about section (on main page)
- ***************************************/
-.about-section {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 2;
-    grid-column: 2 / span 10;
-    background-color: #fff;
-    padding: 3rem;
-}
-
-#about h4 {
-    font-weight: 700;
-    line-height: 1.5;
-}
-
-#about .team-section p {
-    text-align: right;
-}
-
-#about .app-section p {
-    text-align: left;
-}
-
-.app-section {
-    grid-column: 2 / span 4;
-    text-align: left;
-}
-
-.team-section {
-    grid-column: 8 / span 4;
-    text-align: right;
-}
-
-.team-pic {
-    border-radius: 100%;
-    width: 4rem;
-    margin: 0 20px;
-}
-
-
-/***************************************
- *  about section (on separate page)
- ***************************************/
-.about-content {
-    display: table-cell;
-    padding-top: 100px;
-    vertical-align: top;
-    text-align: center;
-    -webkit-transform: translateY(-2.1rem);
-    transform: trnaslateY(-2.1rem);
-}
-
-/* about the work/project */
-
-#about-work {
-    background: #fff;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-    display: table;
-    position: relative;
-    text-align: center;
-    padding: 0 0 3rem 0;
-}
-
-#about-work .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: auto;
-    align-items: center;
-    justify-content: center;
-}
-
-#about-work .column {
-    display: flex; 
-    flex-direction: column;
-    margin: 0 30px;
-}
-
-#about-work h2 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #000;
-    letter-spacing: .1rem;
-    line-height: 1.5;
-    text-transform: uppercase;
-}
-
-#about-work h5 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    color: #000;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-
-#about-work p {
-    line-height: 2;
-}
-
-.spotify-api-img {
-    padding: 10px;
-}
-
-/* about the team */
-
-#about-us {
-    background: #181818 url(../images/design/ruvim-miksanskiy-1075389-unsplash.jpg) no-repeat center bottom;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 720px;
-    display: table;
-    position: relative;
-    text-align: center;
-    padding: 3rem;
-}
-
-.about-us-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #111111;
-    opacity: .85;
-}
-
-#about-us h2 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: .1rem;
-    line-height: 1.5;
-    text-transform: uppercase;
-} 
-
-#about-us p {
-    font-weight: 300;
-    line-height: 2rem;
-    color: #fff;
-}
-
-#about-us h5 {
-    padding-top: 20px;
-    padding-bottom: 10px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-
-#about-us img.team-pic {
-    margin-top: 40px;
-    width: 7rem;
-    opacity: .7;
-}
-
-#about-us img:hover {
-    opacity: 1;
-}
-
-
-/***************************************
  *  footer
  ***************************************/
  .footer {
@@ -476,15 +303,6 @@ input, label, textarea {
     }
 }
 
-@media only screen and (max-width: 700px) {
-    #about .team-section {
-        display: none;
-    }
-    #about .app-section {
-        grid-column: 2 / span 10;
-    }
-}
-
 @media only screen and (min-width: 1024px) {
     .search-box {
         width: 600px;
@@ -503,11 +321,5 @@ input, label, textarea {
     }
     .footer {
         border-top: none;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    #about .about-section {
-        display: none;
     }
 }
