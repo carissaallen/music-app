@@ -41,10 +41,10 @@ p {
 /***************************************
  *  navbar
  ***************************************/
- .nav-item a:hover {
+ #navbarToggler .nav-item a:hover {
     text-decoration: none;
     border-bottom: 2px solid #b00f24;
-    padding: 2px 0;
+    padding: 5px 0;
 }
 
 .navbar-nav > li {
@@ -298,7 +298,7 @@ input, label, textarea {
     padding: 0 0 3rem 0;
 }
 
-#about-work .row {
+#about-work .tech-stack .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -307,7 +307,7 @@ input, label, textarea {
     justify-content: center;
 }
 
-#about-work .column {
+#about-work .tech-stack .column {
     display: flex; 
     flex-direction: column;
     margin: 0 30px;
@@ -315,29 +315,73 @@ input, label, textarea {
 
 #about-work h2 {
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 900;
     color: #000;
-    letter-spacing: .1rem;
+    letter-spacing: .2rem;
     line-height: 1.5;
     text-transform: uppercase;
+    padding-bottom: 40px;
 }
 
 #about-work h5 {
-    padding-top: 10px;
-    padding-bottom: 10px;
     font-size: 18px;
     font-weight: 700;
     color: #000;
+    line-height: 2;
     letter-spacing: .1em;
-    text-transform: uppercase;
 }
 
 #about-work p {
     line-height: 2;
 }
 
-.spotify-api-img {
-    padding: 10px;
+#about-work .project-desc {
+    padding: 20px 40px 20px 200px;
+    text-align: left;
+}
+
+#about-work .project-desc h5 {
+    font-size: 22px;
+}
+
+#about-work .project-desc p {
+    font-size: 15px;
+}
+
+#about-work .api-desc {
+    padding: 20px 200px 20px 40px;
+}
+
+.api-desc a,a:hover {
+    color: #000;
+    cursor: default;
+    text-decoration: none;
+}
+
+.api-desc h5 a {
+    padding: 5px 0;
+    border-bottom: 2px solid #1DB954;
+}
+
+.tech-stack {
+    padding: 0px 200px 20px 0px;
+}
+
+.tech-stack a,a:hover {
+    color: #000;
+    cursor: default;
+    text-decoration: none;
+}
+
+.tech-stack h5 a {
+    padding: 5px 0;
+    border-bottom: 2px solid #1DB954;
+}
+
+.tech-stack p {
+    padding-top: 5px;
+    font-family: "Permanent Marker";
+    font-size: 18px;
 }
 
 /* about the team */
@@ -368,9 +412,9 @@ input, label, textarea {
 
 #about-us h2 {
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 900;
     color: #fff;
-    letter-spacing: .1rem;
+    letter-spacing: .2rem;
     line-height: 1.5;
     text-transform: uppercase;
 } 
@@ -379,16 +423,16 @@ input, label, textarea {
     font-weight: 300;
     line-height: 2rem;
     color: #fff;
+    font-size: 15px;
 }
 
 #about-us h5 {
     padding-top: 20px;
     padding-bottom: 10px;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 700;
     color: #fff;
     letter-spacing: .1em;
-    text-transform: uppercase;
 }
 
 #about-us img.team-pic {
