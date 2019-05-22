@@ -32,7 +32,7 @@
 
     <!-- css
   ========================================= -->
-    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
 
     <!-- bootstrap script tags
   ========================================= -->
@@ -45,15 +45,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    
-    <!-- include the web playback sdk
-  ========================================= -->
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    
-    <!-- include js file for web playback
-  ========================================= -->
-  <script src="../scripts/playback.js" defer></script>
-
 </head>
 
 <body>
@@ -78,7 +69,7 @@
         </div>
     </nav>
 
-    <table border="1">
+    <!-- <table border="1">
         <tr>
             <th>Song ID</th>
             <th>Song Title</th>
@@ -95,8 +86,25 @@
                 <td>{{ albumImageURL }}</td>
             </tr>
         {{ /playlist }}
-    </table>
+    </table> -->
 
+        <div class="container">
+        {{ #playlist }}
+        <div class="row">
+            <div class="col-6 col-md-4">
+                <img src= {{ albumImageURL }} height="100%" width="100%">
+            </div>
+            <div class="col-12 col-md-8">
+                <p>{{ song }}</p>
+                <br>
+                <p>{{ artist }}</p>
+                <br>
+                <p>{{ album }}</p>
+                <br>
+            </div>
+        </div>
+        {{ /playlist }}
+    </div>
 
 
     <!-- footer
