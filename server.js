@@ -215,5 +215,5 @@ var stateKey = 'spotify_auth_state';
 //   });
 // });
 
-// console.log(`Listening on port...`);
-// app.listen(port);
+console.log(`Listening on port...`);
+app.listen(port);
