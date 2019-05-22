@@ -101,6 +101,17 @@ router.get('/playlist', function(req, res) {
 
 var stateKey = 'spotify_auth_state';
 
+// Generates a random string containing numbers and letters
+var generateRandomString = function(length) {
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+   for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+};
+
 // Requests authorization for user login
 app.get('/login', function(req, res) {
   var state = generateRandomString(16);
