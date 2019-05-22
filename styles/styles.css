@@ -392,7 +392,7 @@ input, label, textarea {
 /* about the team */
 
 #about-us {
-    background: #181818 url(../images/design/ruvim-miksanskiy-1075389-unsplash.jpg) no-repeat center bottom;
+    background: #181818 url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center bottom;
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
@@ -425,10 +425,21 @@ input, label, textarea {
 } 
 
 #about-us p {
+    margin: 0 30px;
     font-weight: 300;
     line-height: 2rem;
     color: #fff;
     font-size: 15px;
+}
+
+#about-us .who-we-are h5 {
+    padding: 10px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+#about-us .team-desc {
+    margin: 10px 300px;
 }
 
 #about-us h5 {
