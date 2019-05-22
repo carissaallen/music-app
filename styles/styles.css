@@ -435,11 +435,14 @@ input, label, textarea {
 #about-us .who-we-are h5 {
     padding: 10px;
     font-size: 18px;
-    display: inline-block;
 }
 
 #about-us .team-desc {
     margin: 10px 300px;
+}
+
+#about-us .team-desc p {
+    font-size: 16px;
 }
 
 #about-us h5 {
