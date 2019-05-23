@@ -69,6 +69,7 @@ router.get('/playlist', function(req, res) {
     })
     .then(function(data){
       var playlist = [];
+      var previewURL = '';
       var tracks = data.body.tracks;
 
       for (var i=0; i < tracks.length; i++) {
@@ -77,7 +78,8 @@ router.get('/playlist', function(req, res) {
           song: tracks[i].name,
           artist: tracks[i].artists[0].name,
           album: tracks[i].album.name,
-          albumImageURL: tracks[i].album.images[0].url
+          albumImageURL: tracks[i].album.images[0].url,
+          previewURL: tracks[i].preview_url
         }
         playlist.push(track);
       }
