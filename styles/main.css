@@ -174,7 +174,7 @@ img.bg-mobile {
     color: #88899f;
     position: absolute;
     right: 20px;
-    top: 1%;
+    top: 2.5%;
     transform: translateY(-50%);
     transition: color ease .2s;
 }

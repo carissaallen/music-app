@@ -79,26 +79,23 @@
                 <h1>Search for music.</h1>
                 <h3>Generates a new playlist based on your favorite song, artist, or genre.</h3>
                 <div class="search-box">
-                    <div class="icon-search"><img src="../images/icons/iconmonstr-magnifier-4.svg"></div>
-                    <div id="app" class="react-autosuggest__container">
-                        <form action="/playlist" method="get">
-                            <input class="react-autosuggest__input" name="input" type="text"
-                            placeholder="Type an artist name, song title, or genre" autocomplete="off" role="combobox">
-                        </form>
-                    </div>
+                    <form action="/playlist" method="get">
+                        <div class="icon-search"><input type="image" src="../images/icons/iconmonstr-magnifier-4.svg" style="border: 0 none;"></div>
+                        <input class="button" name="input" type="text" placeholder="Type an artist name">
+                    </form>
                     <div id="login">
                         <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
                     </div>
                 </div>
             </div>
         </div>
-            <div class="fit-to-box">
-                <iframe frameborder="0" height="100%" width="100%"
-                    src="https://www.youtube.com/embed/7BJ7MDOmLPE?&start=14&autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=7BJ7MDOmLPE"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
-                </iframe>
-                <img class="bg-mobile" src="../images/design/marc-schafer-1545959-unsplash.jpg">
-            </div>
+        <div class="fit-to-box">
+            <iframe frameborder="0" height="100%" width="100%"
+                src="https://www.youtube.com/embed/7BJ7MDOmLPE?&start=14&autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=7BJ7MDOmLPE"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+            <img class="bg-mobile" src="../images/design/marc-schafer-1545959-unsplash.jpg">
+        </div>
         </div>
     </section>
 
@@ -112,8 +109,8 @@
                 <p class="app-description">
                     We developed a full-stack web application
                     to generate new music playlists based on a user's favorite song, artist, or genre.
-                <br>
-                <br>
+                    <br>
+                    <br>
                     Our application is integrated with the Spotify API to get
                     music recommendations based on seeds, and it implements the
                     Authorization Code Flow for authentication.
@@ -147,7 +144,7 @@
         </div>
     </div>
 
-    
+
     <!-- note: when deploying, replace "development.js" with "production.min.js". -->
     <!-- load react scripts -->
     <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
