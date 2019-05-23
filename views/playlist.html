@@ -1,125 +1,116 @@
 <!DOCTYPE html>
 <html lang="en-US">
+    <head>
+        <!-- standard page requirements
+    ========================================= -->
+        <meta charset="utf-8">
+        <title>Playlist - Discover Music</title>
+        <meta name="description" content="A full-stack web application created by Hannah Galbraith and Carissa Allen." />
 
-<head>
-    <!-- standard page requirements
-  ========================================= -->
-    <meta charset="utf-8">
-    <title>Playlist - Discover Music</title>
-    <meta name="description" content="A full-stack web application created by Hannah Galbraith and Carissa Allen." />
+        <!-- dns-prefetch
+    ========================================= -->
+        <link rel="dns-prefetch" href="//cdnjs.cloudfare.com">
 
-    <!-- dns-prefetch
-  ========================================= -->
-    <link rel="dns-prefetch" href="//cdnjs.cloudfare.com">
+        <!-- favicons
+    ========================================= -->
+        <link rel="browser icon" href="../images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="../images/favicon/site.webmanifest">
 
-    <!-- favicons
-  ========================================= -->
-    <link rel="browser icon" href="../images/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../images/favicon/site.webmanifest">
+        <!-- bootstrap cdn
+    ========================================= -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- bootstrap cdn
-  ========================================= -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- fonts
+    ========================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,200i,300,400,400i,700,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700" rel="stylesheet">
 
-    <!-- fonts
-  ========================================= -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,200i,300,400,400i,700,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,400i,700" rel="stylesheet">
+        <!-- css
+    ========================================= -->
+        <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <link rel="stylesheet" type="text/css" href="../styles/playlist-styles.css">
 
-    <!-- css
-  ========================================= -->
-    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+        <!-- bootstrap script tags
+    ========================================= -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </head>
 
-    <!-- bootstrap script tags
-  ========================================= -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</head>
-
-<body>
+    <body>
 
 
-    <!-- navbar
-  =========================================================================== -->
-    <nav class="navbar navbar-expand-md navbar-light navbar-custom">
-        <a href="/" class="navbar-left">
-            <h1>H & C</h1>
-        </a>
-        <button class="navbar-toggler customer-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarToggler">
-            <img src="../images/icons/iconmonstr-menu-1.svg" style="height: 1.3rem;">
-        </button>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-auto">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- <table border="1">
-        <tr>
-            <th>Song ID</th>
-            <th>Song Title</th>
-            <th>Artist</th>
-            <th>Album</th>
-            <th>Album Image URL</th>
-        </tr>
-        {{ #playlist }}
-            <tr>
-                <td>{{ id }}</td>
-                <td>{{ song }}</td>
-                <td>{{ artist }}</td>
-                <td>{{ album }}</td>
-                <td>{{ albumImageURL }}</td>
-            </tr>
-        {{ /playlist }}
-    </table> -->
-
-        <div class="container">
-        {{ #playlist }}
-        <div class="row">
-            <div class="col-6 col-md-4">
-                <img src= {{ albumImageURL }} height="100%" width="100%">
+        <!-- navbar
+    =========================================================================== -->
+        <nav class="navbar navbar-expand-md navbar-light navbar-custom">
+            <a href="/" class="navbar-left">
+                <h1>H & C</h1>
+            </a>
+            <button class="navbar-toggler customer-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggler">
+                <img src="../images/icons/iconmonstr-menu-1.svg" style="height: 1.3rem;">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-12 col-md-8">
-                <p>{{ song }}</p>
-                <br>
-                <p>{{ artist }}</p>
-                <br>
-                <p>{{ album }}</p>
-                <br>
+        </nav>
+
+
+        <section>
+            <div id="title">
+                <h1 style="text-align:center;">Playlist</h1>
             </div>
-        </div>
-        {{ /playlist }}
-    </div>
+
+        </section>
+
+        <section class="playlist">
+            <div class="container">
+                    {{ #playlist }}
+                    <div class="row track">
+                        <div class="col-6 col-md-4 album-img">
+                            <img src= {{ albumImageURL }} height="100%" width="100%">
+                        </div>
+                        <div class="col-12 col-md-8 song-info">
+                            <h2 class="song song-text">{{ song }}</h2>
+                            <br>
+                            <h2 class="song-text">{{ artist }}</h2>
+                            <br>
+                            <h2 class="song-text"><em>{{ album }}</em></h2>
+                            <br>
+                        </div>
+                    </div>
+                    {{ /playlist }}
+                </div>
+        </section>
 
 
-    <!-- footer
-  =========================================================================== -->
-    <div class="footer">
-        <div class="grid-wrapper">
-            <div class="social">
-                <a href="https://www.github.com/carissaallen/music-app">
-                    <img class="logo-sm" src="../images/icons/iconmonstr-github-1.svg"></a>
-                <a href="https://www.spotify.com">
-                    <img class="logo-sm" src="../images/icons/iconmonstr-spotify-1.svg"></a>
+        <!-- footer
+    =========================================================================== -->
+        <div class="footer">
+            <div class="grid-wrapper">
+                <div class="social">
+                    <a href="https://www.github.com/carissaallen/music-app">
+                        <img class="logo-sm" src="../images/icons/iconmonstr-github-1.svg"></a>
+                    <a href="https://www.spotify.com">
+                        <img class="logo-sm" src="../images/icons/iconmonstr-spotify-1.svg"></a>
+                </div>
             </div>
         </div>
-    </div>
 
-</body>
+    </body>
 
 </html>

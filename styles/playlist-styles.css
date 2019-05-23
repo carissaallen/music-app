@@ -1,0 +1,28 @@
+/***************************************
+ *  elements
+ ***************************************/
+
+ .playlist {
+    /* background-color: black; */
+    padding-top: 1rem;
+}
+
+.album-img {
+    margin-bottom: 1rem;
+}
+
+.song-info {
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.song-text {
+    font-size: 30px;
+    font-weight: 900;
+    /* color: white; */
+}
+
+.song {
+    font-size: 27px;
+    font-weight: 800;
+}
