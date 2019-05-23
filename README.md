@@ -6,9 +6,11 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 ### Front-end
 * HTML5
 * CSS3
+* Bootstrap 4
 ### Back-end
 * JavaScript
 * Mustache
+* Node.js
 * Express
 * [Spotify API](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/)
 
@@ -37,17 +39,11 @@ Updated _package.json_ file to include node/npm versions.
 
 Installed the [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up) for deployment.
 
-**React**
-
-Installed React Autosuggest.
-
-`npm install react-autosuggest --save`
-
 ## Deployment
 
-Deployed to: [https://musicdiscovery-hc.herokuapp.com/](https://glacial-oasis-76861.herokuapp.com/)
+Deployed to: [https://musicdiscovery-hc.herokuapp.com/](https://musicdiscovery-hc.herokuapp.com/)
 
-For future deployments, simply `git push heroku master`.
+Continuous deployment is set up on the master branch.
 
 ## Design Inspiration
 [Magic Playlist](https://magicplaylist.co/)
