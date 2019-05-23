@@ -45,6 +45,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -68,31 +69,11 @@
             </ul>
         </div>
     </nav>
-
-    <!-- <table border="1">
-        <tr>
-            <th>Song ID</th>
-            <th>Song Title</th>
-            <th>Artist</th>
-            <th>Album</th>
-            <th>Album Image URL</th>
-        </tr>
-        {{ #playlist }}
-            <tr>
-                <td>{{ id }}</td>
-                <td>{{ song }}</td>
-                <td>{{ artist }}</td>
-                <td>{{ album }}</td>
-                <td>{{ albumImageURL }}</td>
-            </tr>
-        {{ /playlist }}
-    </table> -->
-
         <div class="container">
         {{ #playlist }}
         <div class="row">
             <div class="col-6 col-md-4">
-                <img src= {{ albumImageURL }} height="100%" width="100%">
+                <img src={{ albumImageURL }} height="100%" width="100%">
             </div>
             <div class="col-12 col-md-8">
                 <p>{{ song }}</p>
@@ -100,6 +81,10 @@
                 <p>{{ artist }}</p>
                 <br>
                 <p>{{ album }}</p>
+                <br>
+                <div class="player-controls">
+                <audio controls src={{ previewURL }} id="song-preview" type="audio"></audio>
+                </div>
                 <br>
             </div>
         </div>
