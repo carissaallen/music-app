@@ -8,7 +8,7 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 * CSS3
 ### Back-end
 * JavaScript
-* jQuery
+* Mustache
 * Express
 * [Spotify API](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/)
 
@@ -45,7 +45,7 @@ Installed React Autosuggest.
 
 ## Deployment
 
-Deployed to: [https://glacial-oasis-76861.herokuapp.com/](https://glacial-oasis-76861.herokuapp.com/)
+Deployed to: [https://musicdiscovery-hc.herokuapp.com/](https://glacial-oasis-76861.herokuapp.com/)
 
 For future deployments, simply `git push heroku master`.
 
