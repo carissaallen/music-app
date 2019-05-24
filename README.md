@@ -7,11 +7,11 @@ Generates a playlist recommendation based on a user's favorite song, artist, or 
 * HTML5
 * CSS3
 * Bootstrap 4
+* jQuery
 ### Back-end
-* JavaScript
-* Mustache
 * Node.js
 * Express
+* Mustache
 * [Spotify API](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/)
 
 ## Installations
