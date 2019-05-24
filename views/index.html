@@ -79,34 +79,41 @@
     <!-- title
   =========================================================================== -->
     <section id="title">
-        <div class="title-section">
-            <div class="search-header">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Search for music.</h1>
-                        <h3>Generates a new playlist based on your favorite artist or song.</h3>
-                    </div>
-                    <div class="search-box">
-                        <div class="row">
-                            <form action="/playlist" method="get">
-                                <div class="input-group">
+        <div class="search-header">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Search for music.</h1>
+                    <h3>Generates a new playlist based on your favorite artist or song.</h3>
+                </div>
+                <div class="search-box">
+                    <div class="row">
+                           <div class="input-group">
+                            <form class="form-inline" action="/artist/playlist" method="get">
                                     <!-- toggle -->
-                                    <input id="toggle-event" type="checkbox" data-toggle="toggle"
-                                        data-on="Artist" data-off="Song" data-class="fast" data-onstyle="dark"
-                                        data-size="small" class="col-4" checked>
-                                    <!-- input field -->
-                                    <input class="button col-8" name="input" type="text" placeholder="Type an artist name">
+                                    <div class="form-group mx-auto">
+                                    <input type="checkbox" checked id="toggle-event" data-toggle="toggle" data-on="Artist"
+                                        data-off="Song" data-class="fast" data-offstyle="default" data-onstyle="dark" data-size="small"
+                                        data-style="ios" data-width="60"class="form-control col-2 col-md-2">
+                                    </div>
+                                        <!-- input field -->
+                                    <div class="form-group mx-2">
+                                    <input class="button form-control col-auto" name="input" type="text"
+                                        placeholder="Type an artist name">
+                                    </div>
                                     <!-- search icon -->
-                                    <div class="input-group-append">
+                                    <span class="input-group-append">
                                         <div class="icon-search"><input type="image"
                                                 src="../images/icons/iconmonstr-magnifier-4.svg"
                                                 style="border: 0 none;"></div>
-                                    </div>
+                                    </span>
                                 </div>
                             </form>
                         </div>
-                        <div id="login">
-                            <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
+                        </div>
+                    </div>
+                    <div id="login">
+                        <div class="col-12">
+                        <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
                         </div>
                     </div>
                 </div>
@@ -118,7 +125,6 @@
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
             </iframe>
             <img class="bg-mobile" src="../images/design/marc-schafer-1545959-unsplash.jpg">
-        </div>
         </div>
     </section>
 
