@@ -1,6 +1,6 @@
 # Discover new music you'll enjoy.
 
-Generates a playlist recommendation based on a user's favorite song, artist, or genre.
+Generates a playlist recommendation based on a user's favorite artist or song.
 
 ## Built With
 ### Front-end
