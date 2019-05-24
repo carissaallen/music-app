@@ -47,6 +47,11 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <!-- bootstrap toggle
+  ========================================= -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 </head>
 
 <body>
@@ -76,15 +81,33 @@
     <section id="title">
         <div class="title-section">
             <div class="search-header">
-                <h1>Search for music.</h1>
-                <h3>Generates a new playlist based on your favorite song, artist, or genre.</h3>
-                <div class="search-box">
-                    <form action="/playlist" method="get">
-                        <div class="icon-search"><input type="image" src="../images/icons/iconmonstr-magnifier-4.svg" style="border: 0 none;"></div>
-                        <input class="button" name="input" type="text" placeholder="Type an artist name">
-                    </form>
-                    <div id="login">
-                        <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Search for music.</h1>
+                        <h3>Generates a new playlist based on your favorite artist or song.</h3>
+                    </div>
+                    <div class="search-box">
+                        <div class="row">
+                            <form action="/playlist" method="get">
+                                <div class="input-group">
+                                    <!-- toggle -->
+                                    <input id="toggle-event" type="checkbox" data-toggle="toggle"
+                                        data-on="Artist" data-off="Song" data-class="fast" data-onstyle="dark"
+                                        data-size="small" class="col-4" checked>
+                                    <!-- input field -->
+                                    <input class="button col-8" name="input" type="text" placeholder="Type an artist name">
+                                    <!-- search icon -->
+                                    <div class="input-group-append">
+                                        <div class="icon-search"><input type="image"
+                                                src="../images/icons/iconmonstr-magnifier-4.svg"
+                                                style="border: 0 none;"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="login">
+                            <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,18 +167,7 @@
         </div>
     </div>
 
-
-    <!-- note: when deploying, replace "development.js" with "production.min.js". -->
-    <!-- load react scripts -->
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-autosuggest/dist/standalone/autosuggest.js"></script>
-    <!-- load react component -->
-    <script src="../scripts/search.js"></script>
-    <!-- ajax/handlebars -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-    <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type='text/javascript' src='../scripts/toggle.js'></script>
 </body>
 
 </html>
