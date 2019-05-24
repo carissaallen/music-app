@@ -89,7 +89,7 @@ p {
 }
 
 
-/***************************************
+ /***************************************
  *  main page
  ***************************************/
 .fit-to-box {
@@ -118,6 +118,38 @@ p {
     padding: 5px 10px;
 }
 
+/***************************************
+ *  music toggle
+ ***************************************/
+ .input-group {
+    text-align: center;
+}
+
+input[type='checkbox'] {
+    margin: 0 auto;
+    width: 40%;
+    display: inline-block;
+}
+
+input[type='text'] {
+    margin: 0 auto auto 10px;
+    width: 100%;
+}
+
+.search-box .icon-search {
+    padding-right: 30px;
+}
+
+.btn {
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
+   font-size: 11px;
+   border-radius: 500px;
+   text-transform: uppercase;
+   letter-spacing: .1em;
+   padding: 5px 0 0 7px;
+   margin-top: 1px;
+}
 
 /***************************************
  *  search container
@@ -139,7 +171,6 @@ img.bg-mobile {
     min-height: 65%;
     min-width: 100%;
 
-      
     /* Set up proportionate scaling */
     width: 100%;
     height: auto;
@@ -172,23 +203,17 @@ img.bg-mobile {
 .search-box .icon-search {
     font-size: 22px;
     color: #88899f;
-    position: absolute;
-    right: 20px;
-    top: 2.5%;
-    transform: translateY(-50%);
-    transition: color ease .2s;
 }
 
 .search-box {
-    width: 400px;
-    display: block;
-    position: relative;
-    margin: 20px auto 10px;
+    /* width: 80%; */
+    text-align: center;
+    margin: 10px auto;
     transition: background-color ease .2s;
 }
 
-.search-box input {
-    width: 100%;
+.search-header input {
+    /* width: 100%; */
     font-size: 14px;
     padding: 5px;
     border: 1px solid #f3f3f5;
@@ -199,7 +224,6 @@ img.bg-mobile {
 
 input {
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 200;
     font-style: italic;
     padding: 15px 10px 15px 20px;
@@ -289,6 +313,9 @@ input, label, textarea {
         font-size: 16px;
         color: #181818;
     }
+    .icon-search {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 470px) and (max-width: 599px) {
@@ -301,16 +328,16 @@ input, label, textarea {
     .search-header h3 {
         color: #181818;
     }
-}
+    .icon-search {
+        display: none;
+    }
+} 
 
 @media only screen and (min-width: 1024px) {
-    .search-box {
-        width: 600px;
-    }
-    .spotify-button {
+    /* .spotify-button {
         font-size: 14px;
         padding: 15px 40px;
-    }
+    } */
     .search-header h1 {
         font-size: 80px;
         color: #181818;
