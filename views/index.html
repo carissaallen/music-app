@@ -58,12 +58,11 @@
 
     <!-- navbar
   =========================================================================== -->
-    <nav class="navbar navbar-expand-md navbar-light navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <a href="/" class="navbar-left">
             <h1>H & C</h1>
         </a>
-        <button class="navbar-toggler customer-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarToggler">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
             <img src="../images/icons/iconmonstr-menu-1.svg" style="height: 1.3rem;">
         </button>
         <div class="collapse navbar-collapse" id="navbarToggler">
@@ -75,56 +74,58 @@
         </div>
     </nav>
 
-
     <!-- title
   =========================================================================== -->
     <section id="title">
         <div class="search-header">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Search for music.</h1>
-                    <h3>Generates a new playlist based on your favorite artist or song.</h3>
-                </div>
-                <div class="search-box">
-                    <div class="row">
-                           <div class="input-group">
-                            <form class="form-inline" action="/artist/playlist" method="get">
+            <!-- <div class="container-fluid"> -->
+                <div class="row">
+                    <div class="col-12 search-titles">
+                        <h1>Search for music.</h1>
+                        <h3>Generates a new playlist based on your favorite artist or song.</h3>
+                    </div>
+                    <div class="search-box">
+                        <div class="row">
+                            <div class="input-group">
+                                <form class="form-inline" action="/artist/playlist" method="get">
                                     <!-- toggle -->
                                     <div class="form-group mx-auto">
-                                    <input type="checkbox" checked id="toggle-event" data-toggle="toggle" data-on="Artist"
-                                        data-off="Song" data-class="fast" data-offstyle="default" data-onstyle="dark" data-size="small"
-                                        data-style="ios" data-width="60"class="form-control col-2 col-md-2">
+                                        <input type="checkbox" checked id="toggle-event" data-toggle="toggle"
+                                            data-on="Artist" data-off="Song" data-class="fast" data-offstyle="default"
+                                            data-onstyle="default" data-size="small" data-style="ios" data-width="60"
+                                            class="form-control col-2 col-md-2">
                                     </div>
-                                        <!-- input field -->
+                                    <!-- input field -->
                                     <div class="form-group mx-2">
-                                    <input class="button form-control col-auto" name="input" type="text"
-                                        placeholder="Type an artist name">
+                                        <input class="button form-control col-auto" name="input" type="text"
+                                            placeholder="Type an artist name">
                                     </div>
                                     <!-- search icon -->
                                     <span class="input-group-append">
                                         <div class="icon-search"><input type="image"
                                                 src="../images/icons/iconmonstr-magnifier-4.svg"
-                                                style="border: 0 none;"></div>
+                                                style="border: 0 none;">
+                                        </div>
                                     </span>
-                                </div>
+                            </div>
                             </form>
-                        </div>
-                        </div>
-                    </div>
-                    <div id="login">
-                        <div class="col-12">
-                        <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
                         </div>
                     </div>
                 </div>
+                <div id="login">
+                    <div class="col-12">
+                        <a href="/login" class="btn btn-dark spotify-button">Sign in to Spotify</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="fit-to-box">
-            <iframe frameborder="0" height="100%" width="100%"
-                src="https://www.youtube.com/embed/7BJ7MDOmLPE?&start=14&autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=7BJ7MDOmLPE"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
-            </iframe>
-            <img class="bg-mobile" src="../images/design/marc-schafer-1545959-unsplash.jpg">
+            <div class="hide-mobile">
+                <div class="fit-to-box">
+                    <iframe frameborder="0" height="100%" width="100%"
+                        src="https://www.youtube.com/embed/7BJ7MDOmLPE?&start=14&autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&loop=1&playlist=7BJ7MDOmLPE"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                </div>
+            <!-- </div> -->
         </div>
     </section>
 
@@ -132,29 +133,31 @@
     <!-- about
   =========================================================================== -->
     <section id="about">
-        <div class="about-section">
-            <div class="app-section">
-                <h4>About</h4>
-                <p class="app-description">
-                    We developed a full-stack web application
-                    to generate new music playlists based on a user's favorite song, artist, or genre.
-                    <br>
-                    <br>
-                    Our application is integrated with the Spotify API to get
-                    music recommendations based on seeds, and it implements the
-                    Authorization Code Flow for authentication.
-                </p>
-            </div>
-            <div class="team-section">
-                <h4>The Team</h4>
-                <p>
-                    <img class="team-pic" src="../images/design/team-member-pic-1.jpg">
-                    Hannah Galbraith
-                </p>
-                <p>
-                    <img class="team-pic" src="../images/design/team-member-pic-2.jpg">
-                    Carissa Allen
-                </p>
+        <div class="hide-mobile">
+            <div class="about-section">
+                <div class="app-section">
+                    <h4>About</h4>
+                    <p class="app-description">
+                        We developed a full-stack web application
+                        to generate new music playlists based on a user's favorite song, artist, or genre.
+                        <br>
+                        <br>
+                        Our application is integrated with the Spotify API to get
+                        music recommendations based on seeds, and it implements the
+                        Authorization Code Flow for authentication.
+                    </p>
+                </div>
+                <div class="team-section">
+                    <h4>The Team</h4>
+                    <p>
+                        <img class="team-pic" src="../images/design/team-member-pic-1.jpg">
+                        Hannah Galbraith
+                    </p>
+                    <p>
+                        <img class="team-pic" src="../images/design/team-member-pic-2.jpg">
+                        Carissa Allen
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -173,6 +176,9 @@
         </div>
     </div>
 
+
+    <!-- scripts
+  =========================================================================== -->
     <script type='text/javascript' src='../scripts/toggle.js'></script>
 </body>
 
