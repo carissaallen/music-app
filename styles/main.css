@@ -37,6 +37,10 @@ p {
     font-weight: 400;
 }
 
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 /***************************************
  *  navbar
@@ -171,23 +175,6 @@ input[type='text'] {
     z-index: 9;             /* required for the input tag to work */
 }
 
-img.bg-mobile {
-    /* Set rules to fill background */
-    min-height: 65%;
-    min-width: 100%;
-
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-      
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    z-index: -1;
-  }
-
 .search-header h1 {
     font-weight: 400;
     color: #fff;
@@ -239,8 +226,12 @@ input, label, textarea {
  *  footer
  ***************************************/
  .footer {
+     background-color: #fff;
      border-top: 1px dashed #666;
      padding: 20px 0;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
  }
 
 .grid-wrapper {
@@ -277,11 +268,286 @@ input, label, textarea {
 /***************************************
  *  media queries
  ***************************************/
-@media only screen and (min-width: 576px) {
-    .bg-mobile {
-        display: none;
+/* iphone 5 */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      /* hides the about section */
+      .hide-mobile {
+          display: none;
+      }
+      /* moves the search content toward the center */
+      .search-titles {
+          padding-top: 30%;
+      }
+      /* adds background image in place of video */
+      html {
+        background: #fff url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+    /* makes the footer stretch across the width of the screen */
+    .footer {
+        background-color: #fff;
+        width: 100%;
+    }
+    /* allows social icons to appear side by side, centered  */
+    .footer .social {
+        grid-column: 5 / span 3;
+        margin-left: 20px;
+    }
+    /* color font to improve visibility (default is white) */
+    .search-header h1 {
+        color: #181818;
+    }
+    .search-header h3 {
+        color: #181818;
     }
 }
+
+/* iphone 6+, 7+, 8+ */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+      /* hides the about section */
+      .hide-mobile {
+          display: none;
+      }
+      /* moves the search content toward the center */
+      .search-titles {
+          padding-top: 30%;
+      }
+      /* adds background image in place of video */
+      html {
+        background: #fff url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+    /* makes the footer stretch across the width of the screen */
+    .footer {
+        background-color: #fff;
+        width: 100%;
+    }
+    /* allows social icons to appear side by side, centered  */
+    .footer .social {
+        grid-column: 5 / span 3;
+        margin-left: 20px;
+    }
+    /* color font to improve visibility (default is white) */
+    .search-header h1 {
+        color: #181818;
+    }
+    .search-header h3 {
+        color: #181818;
+    }
+}
+
+/* iphone 6, 6s, 7, 8 */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+      /* hides the about section */
+      .hide-mobile {
+          display: none;
+      }
+      /* moves the search content toward the center */
+      .search-titles {
+          padding-top: 30%;
+      }
+      /* adds background image in place of video */
+      html {
+        background: #fff url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+    /* makes the footer stretch across the width of the screen */
+    .footer {
+        background-color: #fff;
+        width: 100%;
+    }
+    /* allows social icons to appear side by side, centered  */
+    .footer .social {
+        grid-column: 5 / span 3;
+        margin-left: 20px;
+    }
+    /* color font to improve visibility (default is white) */
+    .search-header h1 {
+        color: #181818;
+    }
+    .search-header h3 {
+        color: #181818;
+    }
+}
+
+ /* iphone x */
+ @media only screen 
+ and (min-device-width: 375px) 
+ and (max-device-width: 812px) 
+ and (-webkit-min-device-pixel-ratio: 3) {
+     /* hides the about section */
+     .hide-mobile {
+         display: none;
+     }
+     /* moves the search content toward the center */
+     .search-titles {
+         padding-top: 30%;
+     }
+     /* adds background image in place of video */
+     html {
+       background: #fff url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center center fixed;
+       -webkit-background-size: cover;
+       background-size: cover;
+       height: 100%;
+       overflow: hidden;
+   }
+   /* makes the footer stretch across the width of the screen */
+   .footer {
+       background-color: #fff;
+       width: 100%;
+   }
+   /* allows social icons to appear side by side, centered  */
+   .footer .social {
+       grid-column: 5 / span 3;
+       margin-left: 20px;
+   }
+   /* color font to improve visibility (default is white) */
+   .search-header h1 {
+       color: #181818;
+   }
+   .search-header h3 {
+       color: #181818;
+   }
+}
+
+/* galaxy s3 */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+      /* hides the about section */
+      .hide-mobile {
+          display: none;
+      }
+      /* moves the search content toward the center */
+      .search-titles {
+          padding-top: 30%;
+      }
+      /* adds background image in place of video */
+      html {
+        background: #fff url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+    /* makes the footer stretch across the width of the screen */
+    .footer {
+        background-color: #fff;
+        width: 100%;
+    }
+    /* allows social icons to appear side by side, centered  */
+    .footer .social {
+        grid-column: 5 / span 3;
+        margin-left: 20px;
+    }
+    /* color font to improve visibility (default is white) */
+    .search-header h1 {
+        color: #181818;
+    }
+    .search-header h3 {
+        color: #181818;
+    }
+}
+
+/* galaxy s4, s5, note 3 */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+      /* hides the about section */
+      .hide-mobile {
+          display: none;
+      }
+      /* moves the search content toward the center */
+      .search-titles {
+          padding-top: 30%;
+      }
+      /* adds background image in place of video */
+      html {
+        background: #fff url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+    /* makes the footer stretch across the width of the screen */
+    .footer {
+        background-color: #fff;
+        width: 100%;
+    }
+    /* allows social icons to appear side by side, centered  */
+    .footer .social {
+        grid-column: 5 / span 3;
+        margin-left: 20px;
+    }
+    /* color font to improve visibility (default is white) */
+    .search-header h1 {
+        color: #181818;
+    }
+    .search-header h3 {
+        color: #181818;
+    }
+}
+
+/* galaxy s6 */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) {
+      /* hides the about section */
+      .hide-mobile {
+          display: none;
+      }
+      /* moves the search content toward the center */
+      .search-titles {
+          padding-top: 30%;
+      }
+      /* adds background image in place of video */
+      html {
+        background: #fff url(../images/design/john-westrock-638071-unsplash.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        overflow: hidden;
+    }
+    /* makes the footer stretch across the width of the screen */
+    .footer {
+        background-color: #fff;
+        width: 100%;
+    }
+    /* allows social icons to appear side by side, centered  */
+    .footer .social {
+        grid-column: 5 / span 3;
+        margin-left: 20px;
+    }
+    /* color font to improve visibility (default is white) */
+    .search-header h1 {
+        color: #181818;
+    }
+    .search-header h3 {
+        color: #181818;
+    }
+}
+
 
 @media only screen and (min-width: 259px) and (max-width: 469px) {
     .search-header {
