@@ -232,7 +232,9 @@ router.get('/song/playlist', function(req, res) {
 });
 
 router.get('/save_playlist', function(req, res) {
-  console.log("song_ids for the playlist: " + req.session.song_ids)
+  query = req.query;
+  var playlist_name = query['playlist_name'];
+  var settings = query['settings'];
 
   // Get the authenticated user, create a playlist, and add tracks to playlist
   spotifyApi.getMe()
@@ -241,7 +243,15 @@ router.get('/save_playlist', function(req, res) {
     return user_id;
   })
   .then(function(user_id) {
-    return spotifyApi.createPlaylist(user_id, 'Test Playlist 1', { public: false })
+    var user_choice;
+    if (settings === 'private') {
+      user_choice = false;
+    }
+    else {
+      user_choice = true;
+    }
+
+    return spotifyApi.createPlaylist(user_id, playlist_name, { public: user_choice });
   })
   .then(function(data) {
     var playlist_id = data.body.id;
