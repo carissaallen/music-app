@@ -195,7 +195,9 @@
 } 
 
 #about-us p {
-    margin: 0 30px;
+    margin: auto;
+    width: 85%;
+    text-align: center;
     font-weight: 300;
     line-height: 2rem;
     color: #fff;
@@ -208,7 +210,9 @@
 }
 
 #about-us .team-desc {
-    margin: 10px 300px;
+    width: 75%;
+    text-align: center;
+    margin: auto;
 }
 
 #about-us .team-desc p {
@@ -234,6 +238,9 @@
     opacity: 1;
 }
 
+.about-container {
+    padding-bottom: 100px;
+}
 
 /***************************************
  *  media queries
