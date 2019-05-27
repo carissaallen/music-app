@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const mustache = require('mustache');
 const fs = require('fs');
 const SpotifyWebApi = require('spotify-web-api-node');
+const session = require('express-session');
 
 const app = express();              // Creates an Express application
 const router = express.Router();
@@ -14,6 +15,24 @@ const path = __dirname + '/views/';
 app.use(express.static(__dirname)); // Serves static files
 app.use(express.static(__dirname + '/views/')) 
    .use(cookieParser());
+
+app.use(session({
+  'store': new session.MemoryStore(),
+  'secret': "do-the-fandango",
+  'resave': false,
+  'saveUninitialized': false,
+  'cookie': { 'maxAge': 86400000 }
+}));
+
+app.use(function (req, res, next) {
+  if (!req.session.song_ids) {
+    console.log("song id array not set; initializing...")
+    req.session.song_ids = []
+  }
+
+  console.log("doing this again...")
+  next()
+});
 
 // Generates a random string containing numbers and letters
 var generateRandomString = function(length) {
@@ -25,7 +44,6 @@ var generateRandomString = function(length) {
   }
   return text;
 };
-
 
 // Authenticate against the Spotify accounts
 var client_id = process.env.client_id;          // Application client
@@ -140,6 +158,14 @@ router.get('/artist/playlist', function(req, res) {
         res.writeHead(200, {
           'Content-Type': 'text/html'
         });
+
+
+        req.session.song_ids = []
+        for (var i=0; i < playlistObj.playlist.length; i++) {
+          // console.log(playlistObj.playlist[i].id);
+          req.session.song_ids.push(playlistObj.playlist[i].id);
+        }
+      
         res.write(mustache.render(data.toString(), playlistObj));
         res.end();
       });
@@ -148,6 +174,7 @@ router.get('/artist/playlist', function(req, res) {
       console.error(err);
     });
 });
+
 
 // Retrieve recommended playlist based on song
 router.get('/song/playlist', function(req, res) {
@@ -188,6 +215,13 @@ router.get('/song/playlist', function(req, res) {
         res.writeHead(200, {
           'Content-Type': 'text/html'
         });
+
+        req.session.song_ids = []
+        for (var i=0; i < playlistObj.playlist.length; i++) {
+          // console.log(playlistObj.playlist[i].id);
+          req.session.song_ids.push(playlistObj.playlist[i].id);
+        }
+
         res.write(mustache.render(data.toString(), playlistObj));
         res.end();
       });
@@ -195,6 +229,47 @@ router.get('/song/playlist', function(req, res) {
     .catch(function(err) {
       console.error(err);
     });
+});
+
+router.get('/save_playlist', function(req, res) {
+  query = req.query;
+  var playlist_name = query['playlist_name'];
+  var settings = query['settings'];
+
+  // Get the authenticated user, create a playlist, and add tracks to playlist
+  spotifyApi.getMe()
+  .then(function(data) {
+    var user_id = data.body.id;
+    return user_id;
+  })
+  .then(function(user_id) {
+    var user_choice;
+    if (settings === 'private') {
+      user_choice = false;
+    }
+    else {
+      user_choice = true;
+    }
+
+    return spotifyApi.createPlaylist(user_id, playlist_name, { public: user_choice });
+  })
+  .then(function(data) {
+    var playlist_id = data.body.id;
+    return playlist_id;
+  })
+  .then(function(playlist_id) {
+    var songs = [];
+
+    for (var i=0; i < req.session.song_ids.length; i++) {
+      songs.push("spotify:track:" + req.session.song_ids[i]);
+    }
+
+    return spotifyApi.addTracksToPlaylist(playlist_id, songs);
+  }) 
+  .catch(function(err) {
+    console.log('Something went wrong!', err);
+  });
+  res.send("your playlist has been saved (maybe)");
 });
 app.use('/', router);
 

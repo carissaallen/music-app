@@ -105,6 +105,30 @@
     </div>
   </section>
 
+  <section class="save-playlist-form">
+    <h2>Save Playlist to Your Spotify Account</h2>
+    <form action="/save_playlist" method="get">
+      <div>
+        <label for="playlist_name">Playlist Name:</label>
+        <input type="text" id="playlist_name" name="playlist_name">
+      </div>
+
+      <div>
+        <label for="private">Private</label>
+        <input type="radio" id="private"
+        name="settings" value="private" checked="checked">
+
+        <label for="public">Public</label>
+        <input type="radio" id="public"
+        name="settings" value="public">
+      </div>
+
+      <div>
+          <button type="submit">Save Playlist</button>
+      </div>
+    </form>
+  </section>
+
 
   <!-- footer
     =========================================================================== -->
