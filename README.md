@@ -18,7 +18,7 @@ Generates a playlist recommendation based on a user's favorite artist or song.
 
 Used npm as our package manager to install the following:
 
-`express`, `fs`, `mustache`, `querystring`, `request`, `spotify-web-api-node`
+`express`, `express-session`, `fs`, `mustache`, `querystring`, `request`, `spotify-web-api-node`
 
 **Heroku CLI**
 
