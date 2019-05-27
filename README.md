@@ -34,7 +34,9 @@ Continuous deployment is set up on the master branch.
 [Magic Playlist](https://magicplaylist.co/)
 
 ## Acknowledgments
-A big thanks to the incredible photographers who contributed to [Unsplash](https://unsplash.com/), which is where we were able to get some great content for our application. 
+A big thanks to the incredible photographers who contributed to [Unsplash](https://unsplash.com/), which is where we were able to get some great content for our application.
+
+Learned about Sass and animated text from Jason Arnold's [Getting started with Sass](https://medium.com/@thejasonfile/getting-started-with-sass-dedb271bdf5a), and used Robin Treur's [CodePen](https://codepen.io/RobinTreur/pen/pyWLeB) as the foundational code for the animated text on the saved playlist page. 
 
 ## Built By
 * Hannah Galbraith
