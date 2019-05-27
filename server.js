@@ -233,6 +233,32 @@ router.get('/song/playlist', function(req, res) {
 
 router.get('/save_playlist', function(req, res) {
   console.log("song_ids for the playlist: " + req.session.song_ids)
+
+  // Get the authenticated user, create a playlist, and add tracks to playlist
+  spotifyApi.getMe()
+  .then(function(data) {
+    var user_id = data.body.id;
+    return user_id;
+  })
+  .then(function(user_id) {
+    return spotifyApi.createPlaylist(user_id, 'Test Playlist 1', { public: false })
+  })
+  .then(function(data) {
+    var playlist_id = data.body.id;
+    return playlist_id;
+  })
+  .then(function(playlist_id) {
+    var songs = [];
+
+    for (var i=0; i < req.session.song_ids.length; i++) {
+      songs.push("spotify:track:" + req.session.song_ids[i]);
+    }
+
+    return spotifyApi.addTracksToPlaylist(playlist_id, songs);
+  }) 
+  .catch(function(err) {
+    console.log('Something went wrong!', err);
+  });
   res.send("your playlist has been saved (maybe)");
 });
 app.use('/', router);
