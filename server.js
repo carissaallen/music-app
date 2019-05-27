@@ -15,6 +15,33 @@ app.use(express.static(__dirname)); // Serves static files
 app.use(express.static(__dirname + '/views/')) 
    .use(cookieParser());
 
+// Generates a random string containing numbers and letters
+var generateRandomString = function(length) {
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+   for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+};
+
+
+// Authenticate against the Spotify accounts
+var client_id = process.env.client_id;          // Application client
+var client_secret = process.env.client_secret;  // Application secret
+var redirect_uri = process.env.redirect_uri;    // Application redirect uri
+var scopes = ['playlist-modify-public', 'playlist-modify-private'];
+var stateKey = 'spotify_auth_state';
+
+
+// Create the api object with the credentials
+var spotifyApi = new SpotifyWebApi({
+  clientId: client_id,
+  clientSecret: client_secret,
+  redirectUri: redirect_uri
+});
+
 
 // Render main page
 router.get('/', function(req, res) {
@@ -26,37 +53,53 @@ router.get('/about', function(req, res) {
 res.sendFile(path + 'about.html');
 });
 
-app.use('/', router);
+router.get('/login', function(req, res) {
+  var state = generateRandomString(16);
+  res.cookie(stateKey, state)
 
+  // Create the authorization URL
+  var authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
 
-// Authenticate against the Spotify accounts
-var client_id = process.env.client_id;          // Application client
-var client_secret = process.env.client_secret;  // Application secret
-var redirect_uri = process.env.redirect_uri;    // Application redirect uri
+  // https://accounts.spotify.com:443/authorize?client_id=5fe01282e44241328a84e7c5cc169165&response_type=code&redirect_uri=https://example.com/callback&scope=user-read-private%20user-read-email&state=some-state-of-my-choice
+  console.log(authorizeURL);
 
-
-// Create the api object with the credentials
-var spotifyApi = new SpotifyWebApi({
-  clientId: client_id,
-  clientSecret: client_secret
+  res.redirect(authorizeURL);
 });
 
+router.get('/auth', function(req, res) {
+  var code = req.query.code || null;
+  var state = req.query.state || null;
 
-// Retrieve an access token from Spotify API
-spotifyApi.clientCredentialsGrant().then(
-  function(data) {
-    console.log('The access token expires in ' + data.body['expires_in']);
-    console.log('The access token is ' + data.body['access_token']);
+  var storedState = req.cookies ? req.cookies[stateKey] : null;
 
-    // Save the access token so that it's used in future calls
-    spotifyApi.setAccessToken(data.body['access_token']);
-    console.log('The access token is ' + spotifyApi.getAccessToken())
-  },
-  function(err) {
-    console.log('Something went wrong when retrieving an access token', err);
+  console.log("code: " + code);
+  console.log("state: " + state);
+  console.log("storedState: " + storedState);
+
+  if (state === null || state !== storedState) {
+    console.log("Unauthorized"); // Eventually change this to redirect to an error page or something
+  } else {
+    res.clearCookie(stateKey);
+
+    // Retrieve an access token and a refresh token
+    spotifyApi.authorizationCodeGrant(code).then(
+      function(data) {
+        console.log('The token expires in ' + data.body['expires_in']);
+        console.log('The access token is ' + data.body['access_token']);
+        console.log('The refresh token is ' + data.body['refresh_token']);
+
+        // Set the access token on the API object to use it in later calls
+        spotifyApi.setAccessToken(data.body['access_token']);
+        spotifyApi.setRefreshToken(data.body['refresh_token']);
+
+        res.redirect('/');
+      },
+      function(err) {
+        console.log('Something went wrong!', err);  // Eventually change this to redirect to an error page too
+      }
+    );
   }
-);
-
+});
 
 // Retrieve recommended playlist based on artist
 router.get('/artist/playlist', function(req, res) {
@@ -106,7 +149,6 @@ router.get('/artist/playlist', function(req, res) {
     });
 });
 
-
 // Retrieve recommended playlist based on song
 router.get('/song/playlist', function(req, res) {
   query = req.query;
@@ -154,7 +196,7 @@ router.get('/song/playlist', function(req, res) {
       console.error(err);
     });
 });
-
+app.use('/', router);
 
 console.log(`Listening on port...`);
 app.listen(port);
