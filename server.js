@@ -269,7 +269,7 @@ router.get('/save_playlist', function(req, res) {
   .catch(function(err) {
     console.log('Something went wrong!', err);
   });
-  res.send("your playlist has been saved (maybe)");
+  res.sendFile(path + 'saved_playlist.html');
 });
 app.use('/', router);
 
