@@ -1,6 +1,4 @@
 // credit: https://codepen.io/RobinTreur/pen/pyWLeB
-@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
-
 $background: linear-gradient(to bottom, #405166 0%,#656f6f 100%);
 $brownish: #BC7D55;
 $reddish: #A55441; 
@@ -12,17 +10,30 @@ html{
 }
 
 body{
-  font-family: 'Fjalla One', sans-serif;
+  font-family: 'Lato', sans-serif;
   background: $background;
 }
 
-.container{
+#animated-text-container{
   transform: translate(-50%, -50%);
   top: 20%;
   left: 50%;
   display: block;
   position: absolute;
   max-width: 550px;
+}
+
+.user-options{
+  position: absolute;
+  top: 35%;
+  left: 48%;
+  opacity: .6;
+}
+
+.chevron{
+  transform: rotate(90deg);
+  width: 60px;
+  position: relative;
 }
 
 h1{
@@ -73,5 +84,38 @@ h1{
   }
   &:nth-child(3){
     color: $pinkish;
+  }
+}
+
+#options-grid {
+  text-align: center;
+  margin-top: 500px; /* hack to vertically center */
+  img {
+    width: 175px;
+    height: 175px;
+    overflow: hidden;
+    opacity: .6;
+    margin: 10px 10px;
+  }
+  img:hover {
+    opacity: 1;
+  }
+}
+
+.box {
+  position: relative;
+  width: 100%;
+}
+
+#options-grid {
+  h4 {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 65px 20px;
+    text-align: center;
   }
 }
