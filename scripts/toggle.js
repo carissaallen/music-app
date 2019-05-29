@@ -1,5 +1,5 @@
 $(function() {
-    $("#toggle-event").on('touchstart change', function() {
+    $("#toggle-event").on('touch change', function() {
         if ($(this).prop("checked")) {
             $('input:text').attr("placeholder", "Type an artist name");
         } else {
