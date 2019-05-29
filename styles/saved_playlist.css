@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Lato", sans-serif;
   background: linear-gradient(to bottom, #405166 0%, #656f6f 100%);
@@ -5,37 +9,6 @@ body {
 
 html {
   height: 100%;
-}
-
-#animated-text-container {
-  transform: translate(-50%, -50%);
-  top: 33%;
-  left: 50%;
-  display: block;
-  position: absolute;
-  max-width: 550px;
-}
-
-.animated-text {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 82px;
-  margin: 0;
-  line-height: 67px;
-  letter-spacing: 2px;
-}
-
-.user-options {
-  position: absolute;
-  top: 49%;
-  left: 48%;
-  opacity: 0.6;
-}
-
-.chevron {
-  transform: rotate(90deg);
-  width: 60px;
-  position: relative;
 }
 
 .navbar {
@@ -46,7 +19,23 @@ html {
   color: #000 !important;
 }
 
+#animated-text-container {
+  grid-column: 4/span 6;
+}
+
+.animated-text {
+  grid-column: 4/span 6;
+  padding-top: 100px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 82px;
+  margin: 0;
+  line-height: 67px;
+  letter-spacing: 2px;
+}
+
 .title {
+  grid-column: 4/span 6;
   transform: translateX(-50%) rotate(-10deg);
   display: block;
   float: left;
@@ -64,186 +53,202 @@ html {
 }
 
 .title:nth-child(1) {
-  color: #BC7D55;
-}
-.title:nth-child(2) {
   color: #A55441;
 }
 .title:nth-child(3) {
+  color: #BC7D55;
+}
+.title:nth-child(5) {
   color: #f8a183;
 }
 
-#options-grid {
-  text-align: center;
-  margin-top: 475px;
-  /* hack to vertically center */
+.grid-overlay {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
 }
-#options-grid img {
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+}
+
+.chevron-container {
+  opacity: 0.6;
+  text-align: center;
+}
+
+.chevron {
+  grid-column: 12/span 1;
+  grid-row: 2/span 1;
+  transform: rotate(90deg);
+  width: 60px;
+  position: relative;
+}
+
+.chevron-container .grid-12 {
+  grid-template-columns: repeat(23, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.options-container {
+  text-align: center;
+}
+.options-container img {
   width: 175px;
   height: 175px;
   overflow: hidden;
   opacity: 0.6;
   margin: 10px 10px;
 }
-#options-grid img:hover {
+.options-container img:hover {
   opacity: 1;
 }
 
-#options-grid h4 {
+.options-container h4 {
   position: absolute;
-  bottom: 0;
-  width: 80%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  /* iOS */
+  transform: translate(-50%, -50%);
   color: #fff;
   font-weight: 700;
   font-size: 22px;
-  margin: 0 0 65px 20px;
   text-align: center;
+  z-index: 9;
 }
 
-.box {
+.options-container .grid-12 {
+  grid-template-columns: repeat(12, 1fr);
+  height: 100%;
+}
+
+.box-1 {
+  grid-column: 5/span 2;
+  padding-right: 5px;
   position: relative;
-  width: 100%;
 }
 
-/***************************************
- *  media queries
- ***************************************/
+.box-2 {
+  grid-column: 7/span 2;
+  padding-left: 5px;
+  position: relative;
+}
+
 /* iphone 5 */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-  #animated-text-container {
-    top: 33%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  .user-options {
-    top: 42%;
-  }
-
-  #options-grid {
-    margin-top: 825px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* iphone 6+, 7+, 8+ */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-  #animated-text-container {
-    top: 33%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  .user-options {
-    top: 42%;
-  }
-
-  #options-grid {
-    margin-top: 775px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* iphone 6, 6s, 7, 8 */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  #animated-text-container {
-    top: 33%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  .user-options {
-    top: 43%;
-  }
-
-  #options-grid {
-    margin-top: 825px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* iphone x */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-  #animated-text-container {
-    top: 33%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  .user-options {
-    top: 42%;
-  }
-
-  #options-grid {
-    margin-top: 975px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* galaxy s3 */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
-  #animated-text-container {
-    top: 33%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  .user-options {
-    top: 42%;
-  }
-
-  #options-grid {
-    margin-top: 975px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* galaxy s4, s5, note 3 */
 @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
-  #animated-text-container {
-    top: 33%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  .user-options {
-    top: 40%;
-  }
-
-  #options-grid {
-    margin-top: 50%;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* galaxy s6 */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) {
-  #animated-text-container {
-    top: 33%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  .user-options {
-    top: 42%;
-  }
-
-  #options-grid {
-    margin-top: 975px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* ipad 1, 2, mini, air */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .user-options {
-    top: 46%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  #options-grid {
-    margin-top: 675px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* ipad 3, 4, pro 9.7 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  .user-options {
-    top: 46%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  #options-grid {
-    margin-top: 675px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* ipad pro 10.5 */
 @media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-  .user-options {
-    top: 46%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  #options-grid {
-    margin-top: 675px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 /* ipad pro 12.9 */
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
-  .user-options {
-    top: 46%;
+  .box-1 {
+    grid-column: 6/span 1;
   }
 
-  #options-grid {
-    margin-top: 675px;
+  .box-2 {
+    grid-column: 7/span 1;
   }
 }
 
