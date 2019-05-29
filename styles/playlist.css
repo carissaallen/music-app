@@ -11,20 +11,33 @@
     margin-bottom: 1rem;
 }
 
+.album-art {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .song-info {
-    padding-top: 3rem;
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 .song-text {
-    font-size: 30px;
+    font-size: 15px;
     font-weight: 900;
+    margin-bottom: 0;
+    line-height: 0.5;
     /* color: white; */
 }
 
 .song {
-    font-size: 27px;
+    font-size: 15px;
     font-weight: 800;
+}
+
+audio {
+    height: 2rem;
+    width: 16rem;
 }
 
 .save-playlist-form {
