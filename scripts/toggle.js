@@ -10,7 +10,7 @@ $(function() {
 });
 
 $(function() {
-  $(".toggle").on("touchstart", function() {
+  $("#toggle-event").on("touch", function() {
     if ($(this).prop("checked")) {
       $("input:text").attr("placeholder", "Type an artist name");
     } else {
