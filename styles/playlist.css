@@ -51,6 +51,10 @@ audio {
     width: 30%;
 }
 
+button {
+    border-radius: 5px;
+}
+
 .required {
     color: red;
 }
