@@ -32,7 +32,7 @@ Continuous deployment is set up on the master branch.
 
 ## Configuration Variables
 
-In order to connect the app with the Spotify API, follow Spotify's instructions here to set up a Client ID, Client Secret and whitelist a Redirect URI: <https://developer.spotify.com/documentation/general/guides/app-settings/>
+In order to connect the app with the Spotify API, follow Spotify's instructions to set up a Client ID, Client Secret and whitelist a Redirect URI: <https://developer.spotify.com/documentation/general/guides/app-settings/>
 
 The configuration variables will need to be added to Heroku. Instructions for how to do that are available here: <https://devcenter.heroku.com/articles/config-vars>
 
