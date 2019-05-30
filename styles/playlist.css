@@ -50,3 +50,7 @@ audio {
     height: 70%;
     width: 30%;
 }
+
+.required {
+    color: red;
+}
