@@ -114,7 +114,6 @@ router.get("/artist/playlist", function(req, res) {
     })
     .then(function(data) {
       var playlist = [];
-      var previewURL = "";
       var tracks = data.body.tracks;
 
       for (var i = 0; i < tracks.length; i++) {
@@ -124,7 +123,8 @@ router.get("/artist/playlist", function(req, res) {
           artist: tracks[i].artists[0].name,
           album: tracks[i].album.name,
           albumImageURL: tracks[i].album.images[0].url,
-          previewURL: tracks[i].preview_url
+          previewURL: tracks[i].preview_url,
+          tempo: tracks[i].tempo
         };
         playlist.push(track);
       }
@@ -137,12 +137,10 @@ router.get("/artist/playlist", function(req, res) {
         res.writeHead(200, {
           "Content-Type": "text/html"
         });
-
         req.session.song_ids = [];
         for (var i = 0; i < playlistObj.playlist.length; i++) {
           req.session.song_ids.push(playlistObj.playlist[i].id);
         }
-
         res.write(mustache.render(data.toString(), playlistObj));
         res.end();
       });
@@ -247,5 +245,5 @@ router.get("/save_playlist", function(req, res) {
 });
 app.use("/", router);
 
-console.log(`Listening on port...`);
-app.listen(port);
+var server = app.listen(port);
+console.log(`Listening on port ${server.address().port}...`);
