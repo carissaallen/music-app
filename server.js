@@ -79,7 +79,7 @@ router.get("/auth", function(req, res) {
   var storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
-    console.log("Unauthorized"); // Eventually change this to redirect to an error page or something
+    console.log("Unauthorized"); // Redirect error
   } else {
     res.clearCookie(stateKey);
 
@@ -194,7 +194,6 @@ router.get("/song/playlist", function(req, res) {
 
         req.session.song_ids = [];
         for (var i = 0; i < playlistObj.playlist.length; i++) {
-          // console.log(playlistObj.playlist[i].id);
           req.session.song_ids.push(playlistObj.playlist[i].id);
         }
 
