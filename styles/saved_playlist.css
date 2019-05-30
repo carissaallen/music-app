@@ -4,7 +4,7 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background: linear-gradient(to bottom, #405166 0%, #656f6f 100%);
+  background: #f0e9e9;
 }
 
 html {
@@ -128,6 +128,7 @@ html {
 .options-container .grid-12 {
   grid-template-columns: repeat(16, 1fr);
   height: 100%;
+  padding-bottom: 3rem;
 }
 
 .box-1 {
