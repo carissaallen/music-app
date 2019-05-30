@@ -2,9 +2,8 @@
  *  elements
  ***************************************/
 
- .playlist {
-    /* background-color: black; */
-    padding-top: 1rem;
+ .container {
+    padding-bottom: 5%;
 }
 
 .album-img {
@@ -27,7 +26,6 @@
     font-weight: 900;
     margin-bottom: 0;
     line-height: 0.5;
-    /* color: white; */
 }
 
 .song {
@@ -41,5 +39,14 @@ audio {
 }
 
 .save-playlist-form {
-    padding: 7% 10%;
+    position: fixed;
+    top: 7em;
+    right: -3em;
+    padding: 7% 3% 3% 3%;
+    margin-right: 4%;
+    z-index: 2;
+    border-radius: 30px;
+    border-style: dotted;
+    height: 70%;
+    width: 30%;
 }

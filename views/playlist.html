@@ -81,48 +81,48 @@
     </div>
   </section>
 
-  <section class="playlist">
+  <div>
     <div class="container">
-      {{ #playlist }}
-      <div class="row track">
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 album-img">
-          <img src={{ albumImageURL }} class="album-art">
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 song-info">
-          <h2 class="song song-text">{{ song }}</h2>
-          <br>
-          <h2 class="song-text">{{ artist }}</h2>
-          <br>
-          <h2 class="song-text"><em>{{ album }}</em></h2>
-          <br>
-          <div class="player-controls">
-            <audio controls src={{ previewURL }} id="song-preview" type="audio"></audio>
+        {{ #playlist }}
+        <div class="row track">
+          <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 album-img">
+            <img src={{ albumImageURL }} class="album-art">
           </div>
-          <br>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 song-info">
+            <h2 class="song song-text">{{ song }}</h2>
+            <br>
+            <h2 class="song-text">{{ artist }}</h2>
+            <br>
+            <h2 class="song-text"><em>{{ album }}</em></h2>
+            <br>
+            <div class="player-controls">
+              <audio controls src={{ previewURL }} id="song-preview" type="audio"></audio>
+            </div>
+            <br>
+          </div>
+        </div>
+        {{ /playlist }}
+
+    <div class="save-playlist-form">
+        <h2>Save Playlist to Your Spotify Account</h2>
+        <form action="/save_playlist" method="get">
+          <div>
+            <label for="playlist_name">Playlist Name:</label>
+            <input type="text" id="playlist_name" name="playlist_name">
+          </div>
+          <div>
+            <label for="private">Private</label>
+            <input type="radio" id="private" name="settings" value="private" checked="checked">
+            <label for="public">Public</label>
+            <input type="radio" id="public" name="settings" value="public">
+          </div>
+          <div>
+            <button type="submit">Save Playlist</button>
+          </div>
+        </form>
         </div>
       </div>
-      {{ /playlist }}
-  </section>
-
-  <section class="save-playlist-form">
-    <h2>Save Playlist to Your Spotify Account</h2>
-    <form action="/save_playlist" method="get">
-      <div>
-        <label for="playlist_name">Playlist Name:</label>
-        <input type="text" id="playlist_name" name="playlist_name">
-      </div>
-      <div>
-        <label for="private">Private</label>
-        <input type="radio" id="private" name="settings" value="private" checked="checked">
-        <label for="public">Public</label>
-        <input type="radio" id="public" name="settings" value="public">
-      </div>
-      <div>
-        <button type="submit">Save Playlist</button>
-      </div>
-    </form>
-    </div>
-  </section>
+  </div>
 
 
   <!-- footer
