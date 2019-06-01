@@ -40,14 +40,13 @@ audio {
 
 .save-playlist-form {
     position: fixed;
-    top: 7em;
+    top: 0;
     right: -3em;
     padding: 7% 3% 3% 3%;
     margin-right: 4%;
     z-index: 2;
-    border-radius: 30px;
-    border-style: dotted;
-    height: 70%;
+    background-color: lightgray;
+    height: 100%;
     width: 30%;
 }
 
