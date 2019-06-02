@@ -1,0 +1,40 @@
+/***************************************
+ *  elements
+ ***************************************/
+
+ body {
+    margin: 0;
+    padding: 0;
+}
+
+.img {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/design/namroud-gorguis-253765-unsplash.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.error-msg, .go-back {
+    position: relative;
+    text-align: center; 
+    z-index: 100;
+}
+
+.error-msg {
+    top: 10%;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.go-back {
+    top: 75%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+a {
+    font-weight: 701;
+}
