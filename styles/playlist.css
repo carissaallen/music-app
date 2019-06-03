@@ -1,7 +1,33 @@
 /***************************************
  *  elements
  ***************************************/
+a, a:hover {
+    color: #000;
+    cursor: default;
+    text-decoration: none;
+}
 
+audio {
+    height: 2rem;
+    width: 16rem;
+}
+
+button {
+    border-radius: 5px;
+}
+
+input[type='radio'] {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    padding: 3px 10px 5px 3px;
+}
+
+/***************************************
+ *  playlist
+ ***************************************/
  .container {
     padding-bottom: 5%;
 }
@@ -33,27 +59,42 @@
     font-weight: 800;
 }
 
-audio {
-    height: 2rem;
-    width: 16rem;
-}
-
+/***************************************
+ *  save playlist form
+ ***************************************/
 .save-playlist-form {
-    position: fixed;
-    top: 0;
-    right: -3em;
-    padding: 7% 3% 3% 3%;
-    margin-right: 4%;
-    z-index: 2;
-    background-color: lightgray;
+    background-color: #eeeeee;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
     height: 100%;
+    margin-right: 2%;
+    padding: 7% 3% 3% 3%;
+    position: fixed;
+    right: -3em;
+    top: 0;
     width: 30%;
-}
-
-button {
-    border-radius: 5px;
+    z-index: 2;
 }
 
 .required {
     color: red;
+}
+
+.save-playlist-btn {
+    border: none;
+    border-width: 0;
+    margin-top: 5px;
+}
+
+.save-playlist-btn:hover {
+    background: #1DB954;
+}
+
+.save-playlist-form h2 {
+    font-size: 24px;
+}
+
+#playlist-name {
+    margin-top: 10px;
 }
