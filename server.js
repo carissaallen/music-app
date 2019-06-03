@@ -83,7 +83,7 @@ router.get("/auth", function(req, res) {
   var storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
-    console.log("Unauthorized"); // Redirect error
+    res.redirect("/error");
   } else {
     res.clearCookie(stateKey);
 
