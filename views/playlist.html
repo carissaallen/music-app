@@ -77,12 +77,6 @@
 
   <!-- playlist
     =========================================================================== -->
-  <section>
-    <div id="title">
-      <h1 style="text-align:center;">Playlist</h1>
-    </div>
-  </section>
-
   <div>
     <div class="container">
         {{ #playlist }}
@@ -106,20 +100,20 @@
         {{ /playlist }}
 
     <div class="save-playlist-form">
-        <h2>Save Playlist to Your Spotify Account</h2>
+        <h2>Save Playlist to Spotify</h2>
         <form action="/save_playlist" method="get">
           <div>
             <label for="playlist_name">Playlist Name:<span class="required">*</span></label>
             <input type="text" id="playlist_name" name="playlist_name" required>
           </div>
           <div>
-            <label for="private">Private</label>
             <input type="radio" id="private" name="settings" value="private" checked="checked">
-            <label for="public">Public</label>
+            <label for="private">Private</label>
             <input type="radio" id="public" name="settings" value="public">
+            <label for="public">Public</label>
           </div>
           <div>
-            <button type="submit">Save Playlist</button>
+            <button type="submit" class="btn btn-dark save-playlist-btn">Save Playlist</button>
           </div>
         </form>
         </div>
