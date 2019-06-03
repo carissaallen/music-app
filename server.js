@@ -73,13 +73,17 @@ router.get("/login", function(req, res) {
   res.redirect(authorizeURL);
 });
 
+router.get("/error", function(req, res) {
+  res.sendFile(path + "error.html");
+});
+
 router.get("/auth", function(req, res) {
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
-    console.log("Unauthorized"); // Redirect error
+    res.redirect("/error");
   } else {
     res.clearCookie(stateKey);
 
@@ -92,7 +96,7 @@ router.get("/auth", function(req, res) {
         res.redirect("/");
       },
       function(err) {
-        console.error(err);
+        res.redirect("/error");
       }
     );
   }
@@ -148,7 +152,7 @@ router.get("/artist/playlist", function(req, res) {
       });
     })
     .catch(function(err) {
-      console.error(err);
+      res.redirect("/error");
     });
 });
 
@@ -202,7 +206,7 @@ router.get("/song/playlist", function(req, res) {
       });
     })
     .catch(function(err) {
-      console.error(err);
+      res.redirect("/error");
     });
 });
 
@@ -241,8 +245,9 @@ router.get("/save_playlist", function(req, res) {
       return spotifyApi.addTracksToPlaylist(playlist_id, songs);
     })
     .catch(function(err) {
-      console.error(err);
+      res.redirect("/error");
     });
+
   res.sendFile(path + "saved_playlist.html");
 });
 app.use("/", router);
