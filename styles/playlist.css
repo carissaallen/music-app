@@ -93,6 +93,7 @@ label {
 
 .save-playlist-form h2 {
     font-size: 24px;
+    padding-bottom: 10px;
 }
 
 #playlist-name {
