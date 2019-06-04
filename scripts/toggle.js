@@ -1,5 +1,5 @@
 $(function() {
-  $("#toggle-event").on("change", function() {
+  $("#toggle-event").on("touchstart change", function(event) {
     if ($(this).prop("checked")) {
       $("input:text").attr("placeholder", "Type an artist name");
     } else {
@@ -10,8 +10,8 @@ $(function() {
 });
 
 $(function() {
-  $(".toggle").on("touchstart", function() {
-    $(this).bootstrapToggle("toggle");
+  $(".toggle").on("touchstart", function(event) {
+    $('#toggle-event').bootstrapToggle("toggle");
     if ($(this).prop("checked")) {
       $("input:text").attr("placeholder", "Type an artist name");
       $("form").attr("action", "/artist/playlist");
@@ -19,5 +19,7 @@ $(function() {
       $("input:text").attr("placeholder", "Type a song name");
       $("form").attr("action", "/song/playlist");
     }
+    event.stopPropagation();
+    event.preventDefault(); 
   });
 });
