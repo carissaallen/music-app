@@ -79,7 +79,7 @@ router.get("/login", function(req, res) {
 
 
 router.get("/error", function(req, res) {
-  res.sendStatus(400);
+  res.status(400);
   res.sendFile(path + "error.html");
 });
 
