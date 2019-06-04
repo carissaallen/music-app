@@ -45,6 +45,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+
 // Generates a random string containing numbers and letters
 var generateRandomString = function(length) {
   var text = "";
@@ -57,13 +58,16 @@ var generateRandomString = function(length) {
   return text;
 };
 
+
 router.get("/", function(req, res) {
   res.sendFile(path + "index.html");
 });
 
+
 router.get("/about", function(req, res) {
   res.sendFile(path + "about.html");
 });
+
 
 router.get("/login", function(req, res) {
   var state = generateRandomString(16);
@@ -73,9 +77,11 @@ router.get("/login", function(req, res) {
   res.redirect(authorizeURL);
 });
 
+
 router.get("/error", function(req, res) {
   res.sendFile(path + "error.html");
 });
+
 
 router.get("/auth", function(req, res) {
   var code = req.query.code || null;
@@ -83,6 +89,7 @@ router.get("/auth", function(req, res) {
   var storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
+    res.status(404);
     res.redirect("/error");
   } else {
     res.clearCookie(stateKey);
@@ -96,11 +103,13 @@ router.get("/auth", function(req, res) {
         res.redirect("/");
       },
       function(err) {
+        res.status(404);
         res.redirect("/error");
       }
     );
   }
 });
+
 
 // Retrieve recommended playlist based on artist
 router.get("/artist/playlist", function(req, res) {
@@ -151,9 +160,11 @@ router.get("/artist/playlist", function(req, res) {
       });
     })
     .catch(function(err) {
+      res.status(404);
       res.redirect("/error");
     });
 });
+
 
 // Retrieve recommended playlist based on song
 router.get("/song/playlist", function(req, res) {
@@ -204,10 +215,13 @@ router.get("/song/playlist", function(req, res) {
       });
     })
     .catch(function(err) {
+      res.status(404);
       res.redirect("/error");
     });
 });
 
+
+// Save playlist to the user's Spotify account
 router.get("/save_playlist", function(req, res) {
   query = req.query;
   var playlist_name = query["playlist_name"];
@@ -243,6 +257,7 @@ router.get("/save_playlist", function(req, res) {
       return spotifyApi.addTracksToPlaylist(playlist_id, songs);
     })
     .catch(function(err) {
+      res.status(404);
       res.redirect("/error");
     });
 
