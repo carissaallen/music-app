@@ -3,16 +3,13 @@
 Generates a playlist recommendation based on a user's favorite artist or song.
 
 ## Built With
-### Front-end
-* HTML5
-* CSS3
-* Bootstrap 4
-* jQuery
-### Back-end
-* Node.js
-* Express
-* Mustache
-* [Spotify API](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/)
+
+| Frontend  | Backend |
+| ------------- | ------------- |
+| HTML5  | Node.js  |
+| CSS3  | Express  |
+| Bootstrap 4  | Mustache  |
+| jQuery  | [Spotify API](https://developer.spotify.com/documentation/web-api/reference/browse/get-recommendations/)  |
 
 ## Dependencies
 
