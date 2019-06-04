@@ -133,7 +133,7 @@ router.get("/artist/playlist", function(req, res) {
         playlist.push(track);
       }
       return {
-        playlist: playlist
+        "playlist": playlist
       };
     })
     .then(function(playlistObj) {
@@ -187,7 +187,7 @@ router.get("/song/playlist", function(req, res) {
         playlist.push(track);
       }
       return {
-        playlist: playlist
+        "playlist": playlist
       };
     })
     .then(function(playlistObj) {
