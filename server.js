@@ -79,6 +79,7 @@ router.get("/login", function(req, res) {
 
 
 router.get("/error", function(req, res) {
+  res.sendStatus(400);
   res.sendFile(path + "error.html");
 });
 
@@ -89,7 +90,7 @@ router.get("/auth", function(req, res) {
   var storedState = req.cookies ? req.cookies[stateKey] : null;
 
   if (state === null || state !== storedState) {
-    res.redirect(404, "/error");
+    res.redirect("/error");
   } else {
     res.clearCookie(stateKey);
 
@@ -102,7 +103,7 @@ router.get("/auth", function(req, res) {
         res.redirect("/");
       },
       function(err) {
-        res.redirect(404, "/error");
+        res.redirect("/error");
       }
     );
   }
@@ -158,7 +159,7 @@ router.get("/artist/playlist", function(req, res) {
       });
     })
     .catch(function(err) {
-      res.redirect(400, "/error");
+      res.redirect("/error");
     });
 });
 
@@ -212,7 +213,7 @@ router.get("/song/playlist", function(req, res) {
       });
     })
     .catch(function(err) {
-      res.redirect(400, "/error");
+      res.redirect("/error");
     });
 });
 
@@ -253,7 +254,7 @@ router.get("/save_playlist", function(req, res) {
       return spotifyApi.addTracksToPlaylist(playlist_id, songs);
     })
     .catch(function(err) {
-      res.redirect(400, "/error");
+      res.redirect("/error");
     });
 
   res.sendFile(path + "saved_playlist.html");
