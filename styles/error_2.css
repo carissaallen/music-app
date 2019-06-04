@@ -35,18 +35,6 @@ a, a:hover {
     z-index: -1;
 }
 
-.home-btn {
-    background-color: #1DB954;
-    margin: 0 5px;
-    padding: 10px 15px;
-}
-
-.home-btn:hover {
-    background-color: transparent;
-    border-color: #1DB954;
-    color: #1DB954;
-}
-
 .error-details {
     padding-top: 3%;
 }
@@ -65,3 +53,12 @@ a, a:hover {
     list-style: disc;
 }
 
+.go-home {
+    font-family: 'Faster One', sans-serif;
+    font-size: 38px;
+    margin-left: 10px;
+}
+
+.go-home:hover {
+    color: #1DB954;
+}
