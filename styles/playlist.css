@@ -99,3 +99,9 @@ label {
 #playlist-name {
     margin-top: 10px;
 }
+
+.asterisk {
+    width: 10px;
+    margin: auto;
+    padding-bottom: 8px;
+}
