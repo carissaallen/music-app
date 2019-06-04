@@ -11,13 +11,12 @@ $(function() {
 
 $(function() {
   $(".toggle").on("touchstart", function() {
+    $(this).bootstrapToggle("toggle");
     if ($(this).prop("checked")) {
       $("input:text").attr("placeholder", "Type an artist name");
-      $('#toggle-event').bootstrapToggle('enable');
       $("form").attr("action", "/artist/playlist");
     } else {
       $("input:text").attr("placeholder", "Type a song name");
-      $('#toggle-event').bootstrapToggle('disable');
       $("form").attr("action", "/song/playlist");
     }
   });
