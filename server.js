@@ -118,7 +118,6 @@ router.get("/artist/playlist", function(req, res) {
     })
     .then(function(data) {
       var playlist = [];
-      var previewURL = "";
       var tracks = data.body.tracks;
 
       for (var i = 0; i < tracks.length; i++) {
@@ -172,7 +171,6 @@ router.get("/song/playlist", function(req, res) {
     })
     .then(function(data) {
       var playlist = [];
-      var previewURL = "";
       var tracks = data.body.tracks;
 
       for (var i = 0; i < tracks.length; i++) {
@@ -252,5 +250,5 @@ router.get("/save_playlist", function(req, res) {
 });
 app.use("/", router);
 
-console.log(`Listening on port...`);
-app.listen(port);
+var server = app.listen(port);
+console.log(`Listening on port ${server.address().port}...`);
